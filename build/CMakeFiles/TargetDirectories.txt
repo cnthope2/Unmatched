@@ -1,0 +1,3 @@
+C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/CMakeFiles/app.dir
+C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/CMakeFiles/edit_cache.dir
+C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/CMakeFiles/rebuild_cache.dir
