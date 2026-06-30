@@ -10,12 +10,10 @@ private:
     std::vector<Card> cards;
 
 public:
-    void addCard(const Card& card);
-
+    void addCard(const Card &card);
+    void addCopies(const Card &card, int count);
     Card drawCard();
-
     bool isEmpty() const;
-
     int size() const;
 };
 

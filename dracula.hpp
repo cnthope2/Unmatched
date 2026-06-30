@@ -23,7 +23,7 @@ public:
     void initializeDeck();
     void drawCard();
     int getDeckSize() const;
-
     int getHandSize() const;
+    void drawStartingHand();
 };
 #endif

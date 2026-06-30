@@ -1,11 +1,17 @@
 #include "deck.hpp"
 #include <stdexcept>
 
-void Deck::addCard(const Card& card)
+void Deck::addCard(const Card &card)
 {
     cards.push_back(card);
 }
-
+void Deck::addCopies(const Card &card, int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        cards.push_back(card);
+    }
+}
 
 Card Deck::drawCard()
 {

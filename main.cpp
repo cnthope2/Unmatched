@@ -6,14 +6,8 @@ int main()
 {
     Dracula d;
 
-    d.initializeDeck();
+    cout << d.getDeckSize() << endl;
+    cout << d.getHandSize() << endl;
 
-    std::cout << d.getDeckSize() << std::endl;
-
-    d.drawCard();
-
-    std::cout << d.getDeckSize() << std::endl;
-
-    std::cout << d.getHandSize() << std::endl;
     return 0;
 }

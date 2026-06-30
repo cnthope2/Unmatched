@@ -24,6 +24,7 @@ enum class CombatTiming
     None,
     Immediately,
     DuringCombat,
+    BeforeCombat,
     AfterCombat
 };
 
@@ -70,19 +71,12 @@ public:
         int attackValue,
         int defenseValue);
     string getName() const;
-
     CardType getType() const;
-
     FighterType getFighterType() const;
-
     CombatTiming getTiming() const;
-
     CardEffect getEffect() const;
-
     int getBoost() const;
-
     int getAttackValue() const;
-
     int getDefenseValue() const;
 };
 
