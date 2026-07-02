@@ -14,4 +14,6 @@ add_executable(app
     card.cpp
     deck.cpp
     hand.cpp
+    space.cpp
+    board.cpp
 )

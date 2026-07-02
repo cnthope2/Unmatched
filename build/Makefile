@@ -135,6 +135,30 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+board.obj: board.cpp.obj
+.PHONY : board.obj
+
+# target to build an object file
+board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/board.cpp.obj
+.PHONY : board.cpp.obj
+
+board.i: board.cpp.i
+.PHONY : board.i
+
+# target to preprocess a source file
+board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/board.cpp.i
+.PHONY : board.cpp.i
+
+board.s: board.cpp.s
+.PHONY : board.s
+
+# target to generate assembly for a file
+board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/board.cpp.s
+.PHONY : board.cpp.s
+
 card.obj: card.cpp.obj
 .PHONY : card.obj
 
@@ -303,6 +327,30 @@ sisters.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/sisters.cpp.s
 .PHONY : sisters.cpp.s
 
+space.obj: space.cpp.obj
+.PHONY : space.obj
+
+# target to build an object file
+space.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/space.cpp.obj
+.PHONY : space.cpp.obj
+
+space.i: space.cpp.i
+.PHONY : space.i
+
+# target to preprocess a source file
+space.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/space.cpp.i
+.PHONY : space.cpp.i
+
+space.s: space.cpp.s
+.PHONY : space.s
+
+# target to generate assembly for a file
+space.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/space.cpp.s
+.PHONY : space.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -313,6 +361,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
+	@echo ... board.obj
+	@echo ... board.i
+	@echo ... board.s
 	@echo ... card.obj
 	@echo ... card.i
 	@echo ... card.s
@@ -334,6 +385,9 @@ help:
 	@echo ... sisters.obj
 	@echo ... sisters.i
 	@echo ... sisters.s
+	@echo ... space.obj
+	@echo ... space.i
+	@echo ... space.s
 .PHONY : help
 
 

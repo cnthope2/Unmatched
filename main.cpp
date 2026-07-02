@@ -1,13 +1,10 @@
-#include "deck.hpp"
-#include "dracula.hpp"
+
 #include <iostream>
+#include "board.hpp"
+
+using namespace std;
 
 int main()
 {
-    Dracula d;
-
-    cout << d.getDeckSize() << endl;
-    cout << d.getHandSize() << endl;
-
     return 0;
 }

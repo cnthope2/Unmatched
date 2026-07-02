@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/board.cpp.obj"
+  "CMakeFiles/app.dir/board.cpp.obj.d"
   "CMakeFiles/app.dir/card.cpp.obj"
   "CMakeFiles/app.dir/card.cpp.obj.d"
   "CMakeFiles/app.dir/character.cpp.obj"
@@ -13,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/main.cpp.obj.d"
   "CMakeFiles/app.dir/sisters.cpp.obj"
   "CMakeFiles/app.dir/sisters.cpp.obj.d"
+  "CMakeFiles/app.dir/space.cpp.obj"
+  "CMakeFiles/app.dir/space.cpp.obj.d"
   "app.exe"
   "app.exe.manifest"
   "app.pdb"
