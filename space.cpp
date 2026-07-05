@@ -23,12 +23,12 @@ const vector<Space*>& Space::getAdjacentSpaces() const
     return adjacentSpaces;
 }
 
-void Space::addZone(int zone)
+void Space::addZone(Zone zone)
 {
     zones.push_back(zone);
 }
 
-const vector<int>& Space::getZones() const
+const vector<Zone>& Space::getZones() const
 {
     return zones;
 }
@@ -42,6 +42,7 @@ bool Space::hasSecretPassage() const
 {
     return secretPassage;
 }
+
 
 bool Space::isOccupied() const
 {

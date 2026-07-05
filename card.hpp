@@ -17,6 +17,7 @@ enum class FighterType
     Hero,
     Sidekick,
     Any
+
 };
 
 enum class CombatTiming
@@ -42,7 +43,19 @@ enum class CardEffect
     PreyUpon,
     RaveningSeduction,
     ThirstForSustenance,
-    Feint
+    Feint,
+    AidDrWatson,
+    ConfirmSuspicion,
+    CounterPunch,
+    DeduceStrategy,
+    EducationNeverEnds,
+    Elementary,
+    EliminateTheImpossible,
+    FixedPointInAChangingAge,
+    MasterOfDisguise,
+    ServiceRevolver,
+    StudyMethods,
+    TheGameIsAfoot
 };
 
 class Card

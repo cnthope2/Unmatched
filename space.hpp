@@ -5,13 +5,23 @@
 #include "character.hpp"
 using namespace std;
 
-class Space;
+enum class Zone
+{
+    Purple,
+    Green,
+    Gray,
+    Blue,
+    LightBlue,
+    Brown,
+    Cream
+};
+
 
 class Space
 {
 private:
     int id;
-    vector<int> zones;
+    vector<Zone> zones;
     bool secretPassage;
     Character *occupant;
     vector<Space *> adjacentSpaces;
@@ -21,8 +31,8 @@ public:
     int getId() const;
     void addAdjacent(Space *space);
     const vector<Space *> &getAdjacentSpaces() const;
-    void addZone(int zone);
-    const vector<int> &getZones() const;
+    void addZone(Zone zone);
+    const vector<Zone> &getZones() const;
     void setSecretPassage(bool value);
     bool hasSecretPassage() const;
     bool isOccupied() const;
