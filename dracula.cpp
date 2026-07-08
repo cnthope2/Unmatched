@@ -31,7 +31,21 @@ const vector<Sister> &Dracula::getSisters() const
 {
     return sisters;
 }
+vector<Sister> &Dracula::getSisters()
+{
+    return sisters;
+}
+vector<Character*> Dracula::getSidekicks()
+{
+    vector<Character*> result;
 
+    for (Sister& sister : sisters)
+    {
+        result.push_back(&sister);
+    }
+
+    return result;
+}
 void Dracula::initializeDeck()
 {
     deck.addCopies(Card(

@@ -230,9 +230,29 @@ void Board::initializeSecretPassages()
 Space *Board::getSpace(int id)
 {
     if (id < 1 || id > spaces.size())
+    {
         throw out_of_range("Invalid space ID.");
+    }
 
     return &spaces[id - 1];
+}
+vector<Space*> Board::getSpacesInZone(Zone zone)
+{
+    vector<Space*> result;
+
+    for (Space& space : spaces)
+    {
+        for (Zone z : space.getZones())
+        {
+            if (z == zone)
+            {
+                result.push_back(&space);
+                break;
+            }
+        }
+    }
+
+    return result;
 }
 
 int Board::getNumberOfSpaces() const

@@ -43,7 +43,18 @@ bool Space::hasSecretPassage() const
     return secretPassage;
 }
 
+bool Space::isInZone(Zone zone) const
+{
+    for (Zone z : zones)
+    {
+        if (z == zone)
+        {
+            return true;
+        }
+    }
 
+    return false;
+}
 bool Space::isOccupied() const
 {
     return occupant != nullptr;

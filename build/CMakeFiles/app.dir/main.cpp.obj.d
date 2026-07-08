@@ -147,6 +147,7 @@ CMakeFiles/app.dir/main.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ostream.tcc \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/istream \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/istream.tcc \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.hpp \
  C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\board.hpp \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
@@ -154,4 +155,11 @@ CMakeFiles/app.dir/main.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
  C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\space.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\character.hpp
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\character.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\watson.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\deck.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\card.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\hand.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\dracula.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sisters.hpp

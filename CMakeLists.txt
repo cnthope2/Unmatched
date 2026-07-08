@@ -16,4 +16,7 @@ add_executable(app
     hand.cpp
     space.cpp
     board.cpp
+    game.cpp
+    sherlock.cpp
+    Watson.cpp
 )

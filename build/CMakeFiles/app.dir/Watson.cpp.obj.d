@@ -101,4 +101,9 @@ CMakeFiles/app.dir/Watson.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stddef.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc

@@ -35,6 +35,7 @@ public:
     const vector<Zone> &getZones() const;
     void setSecretPassage(bool value);
     bool hasSecretPassage() const;
+    bool isInZone(Zone zone) const;
     bool isOccupied() const;
     Character *getOccupant() const;
     void setOccupant(Character *fighter);

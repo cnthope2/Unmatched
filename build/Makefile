@@ -135,6 +135,30 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+Watson.obj: Watson.cpp.obj
+.PHONY : Watson.obj
+
+# target to build an object file
+Watson.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/Watson.cpp.obj
+.PHONY : Watson.cpp.obj
+
+Watson.i: Watson.cpp.i
+.PHONY : Watson.i
+
+# target to preprocess a source file
+Watson.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/Watson.cpp.i
+.PHONY : Watson.cpp.i
+
+Watson.s: Watson.cpp.s
+.PHONY : Watson.s
+
+# target to generate assembly for a file
+Watson.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/Watson.cpp.s
+.PHONY : Watson.cpp.s
+
 board.obj: board.cpp.obj
 .PHONY : board.obj
 
@@ -255,6 +279,30 @@ dracula.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/dracula.cpp.s
 .PHONY : dracula.cpp.s
 
+game.obj: game.cpp.obj
+.PHONY : game.obj
+
+# target to build an object file
+game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/game.cpp.obj
+.PHONY : game.cpp.obj
+
+game.i: game.cpp.i
+.PHONY : game.i
+
+# target to preprocess a source file
+game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/game.cpp.i
+.PHONY : game.cpp.i
+
+game.s: game.cpp.s
+.PHONY : game.s
+
+# target to generate assembly for a file
+game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/game.cpp.s
+.PHONY : game.cpp.s
+
 hand.obj: hand.cpp.obj
 .PHONY : hand.obj
 
@@ -302,6 +350,30 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+sherlock.obj: sherlock.cpp.obj
+.PHONY : sherlock.obj
+
+# target to build an object file
+sherlock.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/sherlock.cpp.obj
+.PHONY : sherlock.cpp.obj
+
+sherlock.i: sherlock.cpp.i
+.PHONY : sherlock.i
+
+# target to preprocess a source file
+sherlock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/sherlock.cpp.i
+.PHONY : sherlock.cpp.i
+
+sherlock.s: sherlock.cpp.s
+.PHONY : sherlock.s
+
+# target to generate assembly for a file
+sherlock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/sherlock.cpp.s
+.PHONY : sherlock.cpp.s
 
 sisters.obj: sisters.cpp.obj
 .PHONY : sisters.obj
@@ -361,6 +433,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
+	@echo ... Watson.obj
+	@echo ... Watson.i
+	@echo ... Watson.s
 	@echo ... board.obj
 	@echo ... board.i
 	@echo ... board.s
@@ -376,12 +451,18 @@ help:
 	@echo ... dracula.obj
 	@echo ... dracula.i
 	@echo ... dracula.s
+	@echo ... game.obj
+	@echo ... game.i
+	@echo ... game.s
 	@echo ... hand.obj
 	@echo ... hand.i
 	@echo ... hand.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... sherlock.obj
+	@echo ... sherlock.i
+	@echo ... sherlock.s
 	@echo ... sisters.obj
 	@echo ... sisters.i
 	@echo ... sisters.s

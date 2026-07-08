@@ -1,4 +1,5 @@
 #include "character.hpp"
+#include <vector>
 using namespace std;
 #include <stdexcept>
 
@@ -12,7 +13,10 @@ Character::Character(const string &name, int health, int movement)
 
 {
 }
-
+vector<Character*> Character::getSidekicks()
+{
+    return {};
+}
 void Character::takeDamage(int damage)
 {
     if (damage < 0)

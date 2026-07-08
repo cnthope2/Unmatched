@@ -1,26 +1,25 @@
-#ifndef DRACULA_HPP
-#define DRACULA_HPP
+#ifndef SHERLOCK_HPP
+#define SHERLOCK_HPP
+
 #include "character.hpp"
-#include "sisters.hpp"
+#include "watson.hpp"
 #include "deck.hpp"
 #include "hand.hpp"
+#include <vector>
 using namespace std;
 
-#include <vector>
-
-class Dracula : public Character
+class Sherlock : public Character
 {
 private:
-    vector<Sister> sisters;
+    Watson watson;
     Deck deck;
     Hand hand;
 
 public:
-    Dracula();
+    Sherlock();
     void useAbility(Character &target);
-    int getAliveSistersCount() const;
-    const vector<Sister> &getSisters() const;
-    vector<Sister> &getSisters();
+    const Watson &getWatson() const;
+    Watson &getWatson();
     vector<Character*> getSidekicks() override;
     void initializeDeck();
     void drawCard();
@@ -28,4 +27,6 @@ public:
     int getHandSize() const;
     void drawStartingHand();
 };
+
 #endif
+

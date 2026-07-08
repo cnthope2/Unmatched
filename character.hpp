@@ -1,6 +1,7 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 #include <string>
+#include <vector>
 using namespace std;
 
 class Character
@@ -16,6 +17,7 @@ protected:
 public:
     Character(const string &name, int health, int movement);
     virtual ~Character() = default;
+    virtual vector<Character*> getSidekicks();
     void takeDamage(int damage);
     void heal(int amount);
     bool isAlive() const;

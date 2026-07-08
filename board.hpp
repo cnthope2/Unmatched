@@ -10,7 +10,6 @@ class Board
 {
 private:
     vector<Space> spaces;
-
     void initializeSpaces();
     void initializeZones();
     void initializeAdjacency();
@@ -18,7 +17,8 @@ private:
 
 public:
     Board();
-    Space* getSpace(int id);
+    vector<Space *> getSpacesInZone(Zone zone);
+    Space *getSpace(int id);
     int getNumberOfSpaces() const;
 };
 

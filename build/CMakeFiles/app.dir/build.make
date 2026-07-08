@@ -197,6 +197,48 @@ CMakeFiles/app.dir/board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/board.cpp.s"
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\board.cpp -o CMakeFiles\app.dir\board.cpp.s
 
+CMakeFiles/app.dir/game.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/game.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/game.cpp
+CMakeFiles/app.dir/game.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/app.dir/game.cpp.obj"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/game.cpp.obj -MF CMakeFiles\app.dir\game.cpp.obj.d -o CMakeFiles\app.dir\game.cpp.obj -c C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.cpp
+
+CMakeFiles/app.dir/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/game.cpp.i"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.cpp > CMakeFiles\app.dir\game.cpp.i
+
+CMakeFiles/app.dir/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/game.cpp.s"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.cpp -o CMakeFiles\app.dir\game.cpp.s
+
+CMakeFiles/app.dir/sherlock.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/sherlock.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/sherlock.cpp
+CMakeFiles/app.dir/sherlock.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/app.dir/sherlock.cpp.obj"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/sherlock.cpp.obj -MF CMakeFiles\app.dir\sherlock.cpp.obj.d -o CMakeFiles\app.dir\sherlock.cpp.obj -c C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.cpp
+
+CMakeFiles/app.dir/sherlock.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/sherlock.cpp.i"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.cpp > CMakeFiles\app.dir\sherlock.cpp.i
+
+CMakeFiles/app.dir/sherlock.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/sherlock.cpp.s"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.cpp -o CMakeFiles\app.dir\sherlock.cpp.s
+
+CMakeFiles/app.dir/Watson.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Watson.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/Watson.cpp
+CMakeFiles/app.dir/Watson.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/app.dir/Watson.cpp.obj"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/Watson.cpp.obj -MF CMakeFiles\app.dir\Watson.cpp.obj.d -o CMakeFiles\app.dir\Watson.cpp.obj -c C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\Watson.cpp
+
+CMakeFiles/app.dir/Watson.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/Watson.cpp.i"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\Watson.cpp > CMakeFiles\app.dir\Watson.cpp.i
+
+CMakeFiles/app.dir/Watson.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/Watson.cpp.s"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\Watson.cpp -o CMakeFiles\app.dir\Watson.cpp.s
+
 # Object files for target app
 app_OBJECTS = \
 "CMakeFiles/app.dir/main.cpp.obj" \
@@ -207,7 +249,10 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/deck.cpp.obj" \
 "CMakeFiles/app.dir/hand.cpp.obj" \
 "CMakeFiles/app.dir/space.cpp.obj" \
-"CMakeFiles/app.dir/board.cpp.obj"
+"CMakeFiles/app.dir/board.cpp.obj" \
+"CMakeFiles/app.dir/game.cpp.obj" \
+"CMakeFiles/app.dir/sherlock.cpp.obj" \
+"CMakeFiles/app.dir/Watson.cpp.obj"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
@@ -221,11 +266,14 @@ app.exe: CMakeFiles/app.dir/deck.cpp.obj
 app.exe: CMakeFiles/app.dir/hand.cpp.obj
 app.exe: CMakeFiles/app.dir/space.cpp.obj
 app.exe: CMakeFiles/app.dir/board.cpp.obj
+app.exe: CMakeFiles/app.dir/game.cpp.obj
+app.exe: CMakeFiles/app.dir/sherlock.cpp.obj
+app.exe: CMakeFiles/app.dir/Watson.cpp.obj
 app.exe: CMakeFiles/app.dir/build.make
 app.exe: CMakeFiles/app.dir/linkLibs.rsp
 app.exe: CMakeFiles/app.dir/objects1.rsp
 app.exe: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable app.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable app.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\app.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
