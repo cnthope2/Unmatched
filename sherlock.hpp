@@ -5,6 +5,7 @@
 #include "watson.hpp"
 #include "deck.hpp"
 #include "hand.hpp"
+
 #include <vector>
 using namespace std;
 
@@ -19,8 +20,10 @@ public:
     Sherlock();
     void useAbility(Character &target);
     const Watson &getWatson() const;
+
     Watson &getWatson();
     vector<Character*> getSidekicks() override;
+
     void initializeDeck();
     void drawCard();
     int getDeckSize() const;

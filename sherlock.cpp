@@ -7,6 +7,7 @@ Sherlock::Sherlock() : Character("Sherlock Holmes", 16, 2)
 }
 void Sherlock::useAbility(Character &target)
 {
+
 }
 void Sherlock::initializeDeck()
 {
@@ -129,10 +130,15 @@ void Sherlock::initializeDeck()
                    2);
 }
 
-const Watson &Sherlock::getWatson() const
+
+
+
+const Watson  &Sherlock::getWatson() const
+
 {
     return watson;
 }
+
 
 Watson &Sherlock::getWatson()
 {
