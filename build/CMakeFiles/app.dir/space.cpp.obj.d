@@ -64,6 +64,8 @@ CMakeFiles/app.dir/space.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple \
  C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\character.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\deck.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\card.hpp \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/string \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stringfwd.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/char_traits.h \
@@ -106,4 +108,6 @@ CMakeFiles/app.dir/space.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstdio \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cerrno \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/charconv.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\discardpile.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\hand.hpp

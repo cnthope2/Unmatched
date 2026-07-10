@@ -18,7 +18,9 @@ private:
 public:
     Board();
     vector<Space *> getSpacesInZone(Zone zone);
+    vector<Space *> getMovementNeighbors(Space *space);
     Space *getSpace(int id);
+    const Space *getSpace(int id) const;
     int getNumberOfSpaces() const;
 };
 

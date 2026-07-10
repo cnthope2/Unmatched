@@ -236,11 +236,20 @@ Space *Board::getSpace(int id)
 
     return &spaces[id - 1];
 }
-vector<Space*> Board::getSpacesInZone(Zone zone)
+const Space *Board::getSpace(int id) const
 {
-    vector<Space*> result;
+    if (id < 1 || id > spaces.size())
+    {
+        throw out_of_range("Invalid space ID.");
+    }
 
-    for (Space& space : spaces)
+    return &spaces[id - 1];
+}
+vector<Space *> Board::getSpacesInZone(Zone zone)
+{
+    vector<Space *> result;
+
+    for (Space &space : spaces)
     {
         for (Zone z : space.getZones())
         {
@@ -254,7 +263,23 @@ vector<Space*> Board::getSpacesInZone(Zone zone)
 
     return result;
 }
+vector<Space *> Board::getMovementNeighbors(Space *space)
+{
+    vector<Space *> neighbors = space->getAdjacentSpaces();
 
+    if (space->hasSecretPassage())
+    {
+        for (Space &other : spaces)
+        {
+            if (&other != space && other.hasSecretPassage())
+            {
+                neighbors.push_back(&other);
+            }
+        }
+    }
+
+    return neighbors;
+}
 int Board::getNumberOfSpaces() const
 {
     return spaces.size();

@@ -255,6 +255,30 @@ deck.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/deck.cpp.s
 .PHONY : deck.cpp.s
 
+discardpile.obj: discardpile.cpp.obj
+.PHONY : discardpile.obj
+
+# target to build an object file
+discardpile.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/discardpile.cpp.obj
+.PHONY : discardpile.cpp.obj
+
+discardpile.i: discardpile.cpp.i
+.PHONY : discardpile.i
+
+# target to preprocess a source file
+discardpile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/discardpile.cpp.i
+.PHONY : discardpile.cpp.i
+
+discardpile.s: discardpile.cpp.s
+.PHONY : discardpile.s
+
+# target to generate assembly for a file
+discardpile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/discardpile.cpp.s
+.PHONY : discardpile.cpp.s
+
 dracula.obj: dracula.cpp.obj
 .PHONY : dracula.obj
 
@@ -448,6 +472,9 @@ help:
 	@echo ... deck.obj
 	@echo ... deck.i
 	@echo ... deck.s
+	@echo ... discardpile.obj
+	@echo ... discardpile.i
+	@echo ... discardpile.s
 	@echo ... dracula.obj
 	@echo ... dracula.i
 	@echo ... dracula.s

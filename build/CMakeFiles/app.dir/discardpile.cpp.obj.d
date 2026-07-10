@@ -1,7 +1,6 @@
-CMakeFiles/app.dir/game.cpp.obj: \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.cpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\board.hpp \
+CMakeFiles/app.dir/discardpile.cpp.obj: \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\discardpile.cpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\discardpile.hpp \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/requires_hosted.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -64,9 +63,6 @@ CMakeFiles/app.dir/game.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\space.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\character.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\deck.hpp \
  C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\card.hpp \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/string \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stringfwd.h \
@@ -110,64 +106,4 @@ CMakeFiles/app.dir/game.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstdio \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cerrno \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/charconv.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\discardpile.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\hand.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\watson.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\dracula.hpp \
- C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sisters.hpp \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/stdexcept \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/exception \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/exception_ptr.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/cxxabi_init_exception.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/typeinfo \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/nested_exception.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/queue \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/deque \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_deque.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/deque.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_heap.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_queue.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/limits \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/iostream \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ostream \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ostream.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ios \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ios_base.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/atomicity.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/pthread.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sys/types.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/process.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/corecrt_startup.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/signal.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/pthread_signal.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/time.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sys/timeb.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_timeval.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/pthread_time.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/pthread_compat.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sched.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/pthread_unistd.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/locale_classes.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/locale_classes.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/system_error \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/streambuf \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/streambuf.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_ios.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/locale_facets.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cwctype \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/wctype.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/streambuf_iterator.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/locale_facets.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_ios.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ostream.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/istream \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/istream.tcc
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc

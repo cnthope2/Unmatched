@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/card.cpp" "CMakeFiles/app.dir/card.cpp.obj" "gcc" "CMakeFiles/app.dir/card.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/character.cpp" "CMakeFiles/app.dir/character.cpp.obj" "gcc" "CMakeFiles/app.dir/character.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/deck.cpp" "CMakeFiles/app.dir/deck.cpp.obj" "gcc" "CMakeFiles/app.dir/deck.cpp.obj.d"
+  "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/discardpile.cpp" "CMakeFiles/app.dir/discardpile.cpp.obj" "gcc" "CMakeFiles/app.dir/discardpile.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/dracula.cpp" "CMakeFiles/app.dir/dracula.cpp.obj" "gcc" "CMakeFiles/app.dir/dracula.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/game.cpp" "CMakeFiles/app.dir/game.cpp.obj" "gcc" "CMakeFiles/app.dir/game.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/hand.cpp" "CMakeFiles/app.dir/hand.cpp.obj" "gcc" "CMakeFiles/app.dir/hand.cpp.obj.d"

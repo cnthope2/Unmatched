@@ -6,5 +6,6 @@ class Sister : public Character
 {
 public:
     Sister();
+    void revive();
 };
 #endif

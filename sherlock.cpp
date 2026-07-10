@@ -1,4 +1,6 @@
 #include "sherlock.hpp"
+#include <iostream>
+using namespace std;
 
 Sherlock::Sherlock() : Character("Sherlock Holmes", 16, 2)
 {
@@ -7,7 +9,11 @@ Sherlock::Sherlock() : Character("Sherlock Holmes", 16, 2)
 }
 void Sherlock::useAbility(Character &target)
 {
+}
 
+bool Sherlock::canBeDisabledByEffect(const Card &card) const
+{
+    return card.getFighterType() == FighterType::Any;
 }
 void Sherlock::initializeDeck()
 {
@@ -130,23 +136,19 @@ void Sherlock::initializeDeck()
                    2);
 }
 
-
-
-
-const Watson  &Sherlock::getWatson() const
+const Watson &Sherlock::getWatson() const
 
 {
     return watson;
 }
-
 
 Watson &Sherlock::getWatson()
 {
     return watson;
 }
-vector<Character*> Sherlock::getSidekicks()
+vector<Character *> Sherlock::getSidekicks()
 {
-    return { &watson };
+    return {&watson};
 }
 void Sherlock::drawCard()
 {

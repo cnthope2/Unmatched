@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/character.cpp.obj.d"
   "CMakeFiles/app.dir/deck.cpp.obj"
   "CMakeFiles/app.dir/deck.cpp.obj.d"
+  "CMakeFiles/app.dir/discardpile.cpp.obj"
+  "CMakeFiles/app.dir/discardpile.cpp.obj.d"
   "CMakeFiles/app.dir/dracula.cpp.obj"
   "CMakeFiles/app.dir/dracula.cpp.obj.d"
   "CMakeFiles/app.dir/game.cpp.obj"

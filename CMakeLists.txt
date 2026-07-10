@@ -19,4 +19,5 @@ add_executable(app
     game.cpp
     sherlock.cpp
     Watson.cpp
+    discardpile.cpp
 )

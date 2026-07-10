@@ -2,15 +2,14 @@
 using namespace std;
 
 Card::Card(
-    const string& name,
+    const string &name,
     CardType type,
     FighterType fighterType,
     CombatTiming timing,
     CardEffect effect,
     int boost,
     int attackValue,
-    int defenseValue
-)
+    int defenseValue)
     : name(name),
       type(type),
       fighterType(fighterType),
@@ -32,10 +31,6 @@ CardType Card::getType() const
     return type;
 }
 
-FighterType Card::getFighterType() const
-{
-    return fighterType;
-}
 
 CombatTiming Card::getTiming() const
 {
@@ -46,7 +41,10 @@ CardEffect Card::getEffect() const
 {
     return effect;
 }
-
+FighterType Card::getFighterType() const
+{
+    return fighterType;
+}
 int Card::getBoost() const
 {
     return boost;

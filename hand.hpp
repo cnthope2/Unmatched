@@ -7,7 +7,7 @@
 class Hand
 {
 private:
-    std::vector<Card> cards;
+    vector<Card> cards;
 
 public:
     void addCard(const Card& card);
@@ -15,7 +15,7 @@ public:
     const Card& getCard(int index) const;
     bool isEmpty() const;
     int size() const;
-    const std::vector<Card>& getCards() const;
+    const vector<Card>& getCards() const;
 };
 
 #endif

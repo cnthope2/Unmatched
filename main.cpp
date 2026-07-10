@@ -12,24 +12,53 @@ int main()
 
     Game game(&sherlock, &dracula);
 
-    game.startGame();
-    Board &board = game.getBoard();
+    // کنار هم قرار می‌گیرند
+    game.placeCharacter(&sherlock, 1);
+    game.placeCharacter(&dracula, 2);
 
-    cout << "\n===== Board Status =====\n";
+    // دراکولا Feint را برای حمله بازی می‌کند
+    Card feintAttack(
+        "Feint",
+        CardType::Versatile,
+        FighterType::Any,
+        CombatTiming::BeforeCombat,
+        CardEffect::Feint,
+        1,
+        2,
+        2);
 
-    for (int i = 1; i <= board.getNumberOfSpaces(); i++)
-    {
-        Space *space = board.getSpace(i);
+    // شرلوک Counter Punch را برای دفاع بازی می‌کند
+    Card counterPunchDefense(
+        "Counter Punch",
+        CardType::Versatile,
+        FighterType::Hero,
+        CombatTiming::AfterCombat,
+        CardEffect::CounterPunch,
+        1,
+        3,
+        3);
 
-        if (space->isOccupied())
-        {
-            cout << "Space "
-                 << i
-                 << " : "
-                 << space->getOccupant()->getName()
-                 << endl;
-        }
-    }
+    cout << "Dracula HP before: "
+         << dracula.getHealth()
+         << endl;
+
+    cout << "Sherlock HP before: "
+         << sherlock.getHealth()
+         << endl;
+
+    game.resolveCombat(
+        &dracula,
+        &sherlock,
+        feintAttack,
+        &counterPunchDefense);
+
+    cout << "Dracula HP after: "
+         << dracula.getHealth()
+         << endl;
+
+    cout << "Sherlock HP after: "
+         << sherlock.getHealth()
+         << endl;
 
     return 0;
 }

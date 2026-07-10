@@ -13,17 +13,14 @@ class Sherlock : public Character
 {
 private:
     Watson watson;
-    Deck deck;
-    Hand hand;
 
 public:
     Sherlock();
     void useAbility(Character &target);
     const Watson &getWatson() const;
-
     Watson &getWatson();
-    vector<Character*> getSidekicks() override;
-
+    vector<Character *> getSidekicks() override;
+    bool canBeDisabledByEffect(const Card &card) const override;
     void initializeDeck();
     void drawCard();
     int getDeckSize() const;
@@ -32,4 +29,3 @@ public:
 };
 
 #endif
-

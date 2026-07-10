@@ -1,4 +1,5 @@
 #include "Dracula.hpp"
+#include<iostream>
 using namespace std;
 
 Dracula::Dracula() : Character("Dracula", 13, 2)
@@ -7,11 +8,11 @@ Dracula::Dracula() : Character("Dracula", 13, 2)
     sisters.push_back(Sister());
     sisters.push_back(Sister());
     initializeDeck();
-    drawStartingHand();
+   drawStartingHand();
 }
+
 void Dracula::useAbility(Character &target)
 {
-    target.takeDamage(1);
 }
 int Dracula::getAliveSistersCount() const
 {

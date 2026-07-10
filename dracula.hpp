@@ -12,8 +12,7 @@ class Dracula : public Character
 {
 private:
     vector<Sister> sisters;
-    Deck deck;
-    Hand hand;
+    
 
 public:
     Dracula();
