@@ -21,17 +21,7 @@ protected:
     Hand hand;
 
 public:
-    void addCardToHandForTest(const Card &card);
 
-
-
-
-
-
-
-
-
-    
     Character(const string &name, int health, int movement);
     virtual ~Character() = default;
     virtual vector<Character *> getSidekicks();

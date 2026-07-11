@@ -21,6 +21,7 @@ private:
 
 public:
     Game(Character *p1, Character *p2);
+    vector<Character*> getFighters(Character* hero);
     void placeCharacter(Character *character, int spaceId);
     void moveCharacter(Character *character, int destination);
     bool canMove(Character *character, int destination);

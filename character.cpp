@@ -15,11 +15,7 @@ Character::Character(const string &name, int health, int movement)
 
 {
 }
-
-void Character::addCardToHandForTest(const Card &card)
-{
-    hand.addCard(card);
-}
+ 
 
 vector<Character *> Character::getSidekicks()
 {
