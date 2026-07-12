@@ -4,18 +4,20 @@
 #include <iostream>
 using namespace std;
 #include <stdexcept>
-
-Character::Character(const string &name, int health, int movement)
+Character::Character(
+    const string &name,
+    int health,
+    int movement,
+    AttackRange attackRange)
     : name(name),
       health(health),
       maxHealth(health),
       movement(movement),
       position(0),
-      zoneId(0)
-
+      zoneId(0),
+      attackRange(attackRange)
 {
 }
- 
 
 vector<Character *> Character::getSidekicks()
 {
@@ -34,7 +36,10 @@ void Character::takeDamage(int damage)
         health = 0;
     }
 }
-
+AttackRange Character::getAttackRange() const
+{
+    return attackRange;
+}
 void Character::heal(int amount)
 {
     if (amount < 0)

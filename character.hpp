@@ -7,6 +7,12 @@
 #include <vector>
 using namespace std;
 
+enum class AttackRange
+{
+    Melee,
+    Ranged
+};
+
 class Character
 {
 protected:
@@ -19,16 +25,17 @@ protected:
     Deck deck;
     DiscardPile discardPile;
     Hand hand;
+    AttackRange attackRange;
 
 public:
-
-    Character(const string &name, int health, int movement);
+    Character(const string &name, int health, int movement, AttackRange attackRange);
     virtual ~Character() = default;
     virtual vector<Character *> getSidekicks();
     void takeDamage(int damage);
     void heal(int amount);
     bool isAlive() const;
     int getHealth() const;
+    AttackRange getAttackRange() const;
     int getPosition() const;
     int getMovement() const;
     void setPosition(int newPosition);

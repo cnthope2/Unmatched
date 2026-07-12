@@ -21,21 +21,32 @@ private:
 
 public:
     Game(Character *p1, Character *p2);
-    vector<Character*> getFighters(Character* hero);
+    vector<Character *> getFighters(Character *hero);
+    Character *chooseAttackingFighter(Character *hero);
     void placeCharacter(Character *character, int spaceId);
     void moveCharacter(Character *character, int destination);
+    Character *getHeroOwner(Character *fighter) const;
+    void applyFatigueDamage(Character *fighter);
     bool canMove(Character *character, int destination);
     void initialPlacement(bool player1IsYounger);
     bool performAction(Character *character);
-    void startGame();
+    void startGame(bool player1isyounger);
     void nextTurn();
     bool isGameOver() const;
+    void removeFighterFromBoard(Character *fighter);
+    void removeDefeatedSidekicks();
     void maneuver(Character *character);
     void playTurn(Character *character);
     void scheme(Character *character);
-    void attack(Character *attacker);
+    bool attack(Character *attacker);
     int chooseAttackCard(Character *attacker);
     int chooseDefenseCard(Character *defender);
+    bool canFighterUseCard(
+        Character *fighter,
+        const Card &card) const;
+    bool hasLivingFighterForCard(
+        Character *hero,
+        const Card &card) const;
     vector<Character *> getAttackableTargets(Character *attacker);
     void useCharacterAbility(Character *character);
     Board &getBoard();
@@ -74,6 +85,9 @@ public:
         Character *defender,
         const Card &attackCard,
         int &attackValue);
+    bool shareZone(
+        Character *first,
+        Character *second) const;
 };
 
 #endif

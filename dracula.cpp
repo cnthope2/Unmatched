@@ -1,14 +1,15 @@
 #include "Dracula.hpp"
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-Dracula::Dracula() : Character("Dracula", 13, 2)
+Dracula::Dracula() : Character("Dracula", 13, 2, AttackRange::Melee)
+
 {
     sisters.push_back(Sister());
     sisters.push_back(Sister());
     sisters.push_back(Sister());
     initializeDeck();
-   drawStartingHand();
+    drawStartingHand();
 }
 
 void Dracula::useAbility(Character &target)
@@ -36,11 +37,11 @@ vector<Sister> &Dracula::getSisters()
 {
     return sisters;
 }
-vector<Character*> Dracula::getSidekicks()
+vector<Character *> Dracula::getSidekicks()
 {
-    vector<Character*> result;
+    vector<Character *> result;
 
-    for (Sister& sister : sisters)
+    for (Sister &sister : sisters)
     {
         result.push_back(&sister);
     }

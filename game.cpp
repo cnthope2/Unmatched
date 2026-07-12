@@ -36,28 +36,10 @@ void Game::placeCharacter(Character *character, int spaceId)
     space->setOccupant(character);
 }
 
-void Game::startGame()
+void Game::startGame(bool player1IsYounger)
 {
-    int age1, age2;
-
-    cout << "Enter age of Player 1: ";
-    cin >> age1;
-
-    cout << "Enter age of Player 2: ";
-    cin >> age2;
-
-    bool player1IsYounger;
-
-    if (age1 < age2)
-    {
-        player1IsYounger = true;
-    }
-    else
-    {
-        player1IsYounger = false;
-    }
-
     initialPlacement(player1IsYounger);
+
     if (player1IsYounger)
     {
         currentPlayer = 1;
@@ -66,25 +48,38 @@ void Game::startGame()
     {
         currentPlayer = 2;
     }
+
     while (!isGameOver())
     {
-        Character *player = getCurrentPlayer();
+        Character *player =
+            getCurrentPlayer();
 
         playTurn(player);
 
-        nextTurn();
+        if (!isGameOver())
+        {
+            nextTurn();
+        }
     }
-    if (!player1->isAlive())
+
+    removeDefeatedSidekicks();
+
+    cout << "\n..... GAME OVER ......\n";
+
+    if (!player1->isAlive() && !player2->isAlive())
     {
-        cout << player2->getName()
-             << " Wins!\n";
+        cout << "Both heroes were defeated.\n";
+    }
+    else if (!player1->isAlive())
+    {
+        cout << player2->getName() << " wins!\n";
     }
     else
     {
-        cout << player1->getName()
-             << " Wins!\n";
+        cout << player1->getName() << " wins!\n";
     }
 }
+
 void Game::placeSidekicks(Character *player)
 {
     Space *heroSpace = board.getSpace(player->getPosition());
@@ -190,6 +185,66 @@ bool Game::isAdjacent(int from, int to) const
 
     return false;
 }
+Character *Game::getHeroOwner(Character *fighter) const
+{
+    if (fighter == nullptr)
+    {
+        return nullptr;
+    }
+
+    if (fighter == player1)
+    {
+        return player1;
+    }
+
+    if (fighter == player2)
+    {
+        return player2;
+    }
+
+    for (Character *sidekick : player1->getSidekicks())
+    {
+        if (sidekick == fighter)
+        {
+            return player1;
+        }
+    }
+
+    for (Character *sidekick : player2->getSidekicks())
+    {
+        if (sidekick == fighter)
+        {
+            return player2;
+        }
+    }
+
+    return nullptr;
+}
+void Game::applyFatigueDamage(Character *fighter)
+{
+    Character *hero = getHeroOwner(fighter);
+
+    if (hero == nullptr)
+    {
+        cout << "Could not determine fighter owner.\n";
+        return;
+    }
+
+    vector<Character *> fighters = getFighters(hero);
+
+    for (Character *current : fighters)
+    {
+        if (current != nullptr && current->isAlive())
+        {
+            current->takeDamage(2);
+
+            cout << current->getName()
+                 << " takes 2 fatigue damage.\n";
+        }
+    }
+
+    removeDefeatedSidekicks();
+}
 void Game::maneuver(Character *character)
 {
     if (character == nullptr)
@@ -202,19 +257,13 @@ void Game::maneuver(Character *character)
         character->drawCard();
         cout << character->getName() << " drew a card." << endl;
     }
-
     catch (const exception &e)
     {
-        cout << "Cannot draw card: " << e.what() << endl;
+        cout << "Cannot draw card: "
+             << e.what()
+             << endl;
 
-        character->takeDamage(1);
-
-        cout << character->getName() << " takes 1 fatigue damage.\n";
-
-        if (!character->isAlive())
-        {
-            cout << character->getName() << " was defeated by fatigue.\n";
-        }
+        applyFatigueDamage(character);
 
         return;
     }
@@ -266,6 +315,25 @@ void Game::scheme(Character *character)
     cin >> index;
 
     Card card = character->getCardFromHand(index);
+    if (card.getFighterType() == FighterType::Sidekick)
+    {
+        bool livingSidekick = false;
+
+        for (Character *sidekick : character->getSidekicks())
+        {
+            if (sidekick != nullptr && sidekick->isAlive())
+            {
+                livingSidekick = true;
+                break;
+            }
+        }
+
+        if (!livingSidekick)
+        {
+            cout << "The sidekick is defeated. " << "This card cannot be played as a Scheme.\n";
+            return;
+        }
+    }
 
     if (card.getType() != CardType::Scheme)
     {
@@ -514,7 +582,9 @@ void Game::scheme(Character *character)
         Sherlock *sherlock = dynamic_cast<Sherlock *>(character);
 
         if (sherlock == nullptr)
+        {
             break;
+        }
 
         vector<Character *> sidekicks = sherlock->getSidekicks();
 
@@ -550,7 +620,18 @@ void Game::scheme(Character *character)
         }
 
         character->heal(1);
-        character->drawCard();
+        try
+        {
+            character->drawCard();
+
+            cout << character->getName() << " drew 1 card.\n";
+        }
+        catch (const exception &e)
+        {
+            cout << "Cannot draw card: " << e.what() << endl;
+
+            applyFatigueDamage(character);
+        }
 
         cout << "Sherlock healed and drew a card.\n";
 
@@ -618,7 +699,8 @@ void Game::scheme(Character *character)
 
     character->discardCard(index);
 }
-void Game::attack(Character *attacker)
+
+bool Game::attack(Character *attacker)
 {
     if (attacker == nullptr)
     {
@@ -626,63 +708,115 @@ void Game::attack(Character *attacker)
     }
 
     cout << "\n.......... Attack .........\n";
-    cout << "Attacker: " << attacker->getName() << endl;
+    cout << "Attacker: "
+         << attacker->getName()
+         << endl;
 
-    vector<Character *> targets = getAttackableTargets(attacker);
+    vector<Character *> targets =
+        getAttackableTargets(attacker);
 
     if (targets.empty())
     {
         cout << "No valid targets.\n";
-        return;
+        return false;
     }
 
     cout << "Choose target:\n";
 
-    for (int i = 0; i < targets.size(); i++)
+    for (int i = 0;
+         i < static_cast<int>(targets.size());
+         i++)
     {
         cout << i << ". "
              << targets[i]->getName()
              << " (HP: "
              << targets[i]->getHealth()
+             << ", Space: "
+             << targets[i]->getPosition()
              << ")\n";
     }
 
     int targetIndex;
-    cin >> targetIndex;
 
-    if (targetIndex < 0 || targetIndex >= targets.size())
+    while (true)
     {
-        throw invalid_argument("Invalid target.");
+        cout << "Choice: ";
+        cin >> targetIndex;
+
+        if (!cin.fail() &&
+            targetIndex >= 0 &&
+            targetIndex <
+                static_cast<int>(targets.size()))
+        {
+            break;
+        }
+
+        cin.clear();
+        cin.ignore(1000, '\n');
+
+        cout << "Invalid target choice.\n";
     }
 
-    Character *defender = targets[targetIndex];
+    Character *defender =
+        targets[targetIndex];
 
-    if (defender == nullptr || !defender->isAlive())
+    if (defender == nullptr ||
+        !defender->isAlive() ||
+        defender->getPosition() == 0)
     {
         cout << "No valid target.\n";
-        return;
+        return false;
     }
 
     cout << "Target: "
          << defender->getName()
          << endl;
 
-    int attackIndex = chooseAttackCard(attacker);
+    int attackIndex;
+
+    try
+    {
+        attackIndex =
+            chooseAttackCard(attacker);
+    }
+    catch (const exception &e)
+    {
+        cout << "Attack cancelled: "
+             << e.what()
+             << endl;
+
+        return false;
+    }
 
     int defenseIndex = -1;
 
     if (defender->getHandSize() > 0)
     {
-        defenseIndex = chooseDefenseCard(defender);
+        try
+        {
+            defenseIndex =
+                chooseDefenseCard(defender);
+        }
+        catch (const exception &e)
+        {
+            cout << "Defense selection failed: "
+                 << e.what()
+                 << endl;
+
+            return false;
+        }
     }
 
-    Card attackCard = attacker->getCardFromHand(attackIndex);
+    Card attackCard =
+        attacker->getCardFromHand(attackIndex);
 
     Card *defenseCard = nullptr;
 
     if (defenseIndex != -1)
     {
-        defenseCard = new Card(defender->getCardFromHand(defenseIndex));
+        defenseCard = new Card(
+            defender->getCardFromHand(
+                defenseIndex));
     }
 
     resolveCombat(
@@ -692,6 +826,7 @@ void Game::attack(Character *attacker)
         defenseCard);
 
     delete defenseCard;
+    defenseCard = nullptr;
 
     attacker->discardCard(attackIndex);
 
@@ -699,7 +834,10 @@ void Game::attack(Character *attacker)
     {
         defender->discardCard(defenseIndex);
     }
+
+    return true;
 }
+
 void Game::applyImmediatelyEffect(
     Character *player,
     Character *opponent,
@@ -821,10 +959,19 @@ void Game::applyAfterCombatEffect(
         {
         case CardEffect::Exploit:
         {
-            player->drawCard();
+            try
+            {
+                player->drawCard();
 
-            cout << player->getName()
-                 << " drew a card.\n";
+                cout << player->getName() << " drew 1 card.\n";
+            }
+            catch (const exception &e)
+            {
+                cout << "Cannot draw card: " << e.what() << endl;
+                applyFatigueDamage(player);
+            }
+
+            cout << player->getName() << " drew a card.\n";
 
             break;
         }
@@ -832,7 +979,6 @@ void Game::applyAfterCombatEffect(
         case CardEffect::Dash:
         {
             moveCharacterByEffect(player, 3);
-
             break;
         }
 
@@ -962,13 +1108,22 @@ void Game::applyAfterCombatEffect(
         }
         case CardEffect::EducationNeverEnds:
         {
-            opponent->drawCard();
+            try
+            {
+                opponent->drawCard();
+                cout << opponent->getName() << " drew 1 card.\n";
+            }
+            catch (const exception &e)
+            {
+                cout << "Cannot draw card: " << e.what() << endl;
+
+                applyFatigueDamage(opponent);
+            }
             break;
         }
         case CardEffect::CounterPunch:
         {
-            if (isAdjacent(player->getPosition(),
-                           opponent->getPosition()))
+            if (isAdjacent(player->getPosition(), opponent->getPosition()))
             {
                 opponent->takeDamage(2);
             }
@@ -1038,56 +1193,119 @@ void Game::applyAfterCombatEffect(
         }
     }
 }
-vector<Character *> Game::getAttackableTargets(Character *attacker)
+vector<Character *> Game::getAttackableTargets(
+    Character *attacker)
 {
     vector<Character *> targets;
 
-    if (attacker == nullptr)
-        return targets;
-
-    Character *opponent = getOpponent();
-
-    if (opponent != nullptr && opponent->isAlive())
+    if (attacker == nullptr ||
+        !attacker->isAlive() ||
+        attacker->getPosition() == 0)
     {
-        targets.push_back(opponent);
+        return targets;
     }
 
-    vector<Character *> sidekicks = opponent->getSidekicks();
+    Character *opponentHero = getOpponent();
 
-    for (Character *sidekick : sidekicks)
+    if (opponentHero == nullptr)
     {
-        if (sidekick != nullptr && sidekick->isAlive())
+        return targets;
+    }
+
+    vector<Character *> enemyFighters =
+        getFighters(opponentHero);
+
+    for (Character *target : enemyFighters)
+    {
+        if (target == nullptr ||
+            !target->isAlive() ||
+            target->getPosition() == 0)
         {
-            targets.push_back(sidekick);
+            continue;
+        }
+
+        bool canAttack = false;
+
+        if (attacker->getAttackRange() ==
+            AttackRange::Melee)
+        {
+            canAttack = isAdjacent(
+                attacker->getPosition(),
+                target->getPosition());
+        }
+        else
+        {
+            canAttack = shareZone(
+                attacker,
+                target);
+        }
+
+        if (canAttack)
+        {
+            targets.push_back(target);
         }
     }
 
     return targets;
 }
+
 int Game::chooseAttackCard(Character *attacker)
 {
+    if (attacker == nullptr)
+    {
+        throw invalid_argument("Attacker is null.");
+    }
+
+    if (!attacker->isAlive() ||
+        attacker->getPosition() == 0)
+    {
+        throw runtime_error("This fighter cannot attack.");
+    }
+
     attacker->showHand();
 
     cout << "Choose attack card index: ";
 
     int index;
-    cin >> index;
+
+    while (true)
+    {
+        cin >> index;
+
+        if (!cin.fail() &&
+            index >= 0 &&
+            index < attacker->getHandSize())
+        {
+            break;
+        }
+
+        cin.clear();
+        cin.ignore(1000, '\n');
+
+        cout << "Invalid card index. Try again: ";
+    }
 
     Card card = attacker->getCardFromHand(index);
 
-    if (card.getType() != CardType::Attack &&
-        card.getType() != CardType::Versatile)
+    if (card.getType() != CardType::Attack && card.getType() != CardType::Versatile)
     {
         throw runtime_error("This card cannot be used for attack.");
     }
 
+    if (!canFighterUseCard(attacker, card))
+    {
+        throw runtime_error("This fighter cannot use this card.");
+    }
+
     return index;
 }
+
 int Game::chooseDefenseCard(Character *defender)
 {
     defender->showHand();
 
-    cout << "Choose defense card index (-1 for no defense): ";
+    cout << "Choose defense card index "
+         << "(-1 for no defense): ";
 
     int index;
     cin >> index;
@@ -1097,15 +1315,87 @@ int Game::chooseDefenseCard(Character *defender)
         return -1;
     }
 
-    Card card = defender->getCardFromHand(index);
+    Card card =
+        defender->getCardFromHand(index);
 
     if (card.getType() != CardType::Defense &&
         card.getType() != CardType::Versatile)
     {
-        throw runtime_error("This card cannot be used for defense.");
+        throw runtime_error(
+            "This card cannot be used for defense.");
+    }
+
+    if (!canFighterUseCard(defender, card))
+    {
+        throw runtime_error(
+            "This fighter cannot use this card.");
     }
 
     return index;
+}
+
+bool Game::canFighterUseCard(
+    Character *fighter,
+    const Card &card) const
+{
+    if (fighter == nullptr || !fighter->isAlive())
+    {
+        return false;
+    }
+
+    if (card.getFighterType() == FighterType::Any)
+    {
+        return true;
+    }
+
+    bool isSidekick =
+        fighter->getName() == "Dr. Watson" ||
+        fighter->getName() == "Sister";
+
+    if (card.getFighterType() == FighterType::Hero)
+    {
+        return !isSidekick;
+    }
+
+    if (card.getFighterType() == FighterType::Sidekick)
+    {
+        return isSidekick;
+    }
+
+    return false;
+}
+
+bool Game::hasLivingFighterForCard(
+    Character *hero,
+    const Card &card) const
+{
+    if (hero == nullptr)
+    {
+        return false;
+    }
+
+    if (card.getFighterType() == FighterType::Any ||
+        card.getFighterType() == FighterType::Hero)
+    {
+        return hero->isAlive();
+    }
+
+    if (card.getFighterType() == FighterType::Sidekick)
+    {
+        for (Character *sidekick : hero->getSidekicks())
+        {
+            if (sidekick != nullptr &&
+                sidekick->isAlive() &&
+                sidekick->getPosition() != 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    return false;
 }
 bool Game::performAction(Character *character)
 {
@@ -1133,9 +1423,11 @@ bool Game::performAction(Character *character)
         return true;
 
     case 3:
-        attack(character);
-        return true;
+    {
+        Character *attacker = chooseAttackingFighter(character);
 
+        return attack(attacker);
+    }
     default:
         cout << "Invalid action choice.\n";
         return false;
@@ -1144,45 +1436,55 @@ bool Game::performAction(Character *character)
 
 void Game::playTurn(Character *character)
 {
-    if (character == nullptr)
+    if (dynamic_cast<Dracula *>(character) != nullptr)
     {
-        throw invalid_argument("Character is null.");
-    }
+        cout << "\nUse Dracula ability?\n";
+        cout << "1. Yes\n";
+        cout << "0. No\n";
 
-    cout << "\nUse ability?\n";
-    cout << "1. Yes" << endl;
-    cout << "0. No" << endl;
+        int choice;
+        cin >> choice;
 
-    int choice;
-    cin >> choice;
-
-    if (choice == 1)
-    {
-        useCharacterAbility(character);
+        if (choice == 1)
+        {
+            useCharacterAbility(character);
+        }
     }
 
     cout << "\n........ " << character->getName() << "'s Turn ........\n";
 
     actionsRemaining = 2;
 
-    while (actionsRemaining > 0)
+    while (actionsRemaining > 0 && !isGameOver())
     {
         cout << "\nRemaining actions: " << actionsRemaining << endl;
 
-        if (performAction(character))
+        bool completed = performAction(character);
+
+        removeDefeatedSidekicks();
+
+        if (isGameOver())
+        {
+            break;
+        }
+
+        if (completed)
         {
             actionsRemaining--;
         }
         else
         {
-            cout << "Invalid action.\n";
+            cout << "Action was not completed. Try again.\n";
         }
     }
 
-    character->discardExcessCards();
-
-    cout << "Turn ended.\n";
+    if (!isGameOver())
+    {
+        character->discardExcessCards();
+        cout << "Turn ended.\n";
+    }
 }
+
 void Game::initialPlacement(bool player1IsYounger)
 {
     Character *youngerPlayer;
@@ -1259,9 +1561,69 @@ void Game::nextTurn()
         currentPlayer = 1;
     }
 }
+void Game::removeFighterFromBoard(Character *fighter)
+{
+    if (fighter == nullptr)
+    {
+        return;
+    }
+
+    int position = fighter->getPosition();
+
+    if (position == 0)
+    {
+        return;
+    }
+
+    Space *space = board.getSpace(position);
+
+    if (space != nullptr &&
+        space->getOccupant() == fighter)
+    {
+        space->setOccupant(nullptr);
+    }
+
+    fighter->setPosition(0);
+}
+void Game::removeDefeatedSidekicks()
+{
+    Character *heroes[2] = {
+        player1,
+        player2};
+
+    for (Character *hero : heroes)
+    {
+        if (hero == nullptr)
+        {
+            continue;
+        }
+
+        for (Character *sidekick : hero->getSidekicks())
+        {
+            if (sidekick == nullptr)
+            {
+                continue;
+            }
+
+            if (!sidekick->isAlive() &&
+                sidekick->getPosition() != 0)
+            {
+                cout << sidekick->getName()
+                     << " was defeated and removed from the board.\n";
+
+                removeFighterFromBoard(sidekick);
+            }
+        }
+    }
+}
 
 bool Game::isGameOver() const
 {
+    if (player1 == nullptr || player2 == nullptr)
+    {
+        return true;
+    }
+
     return !player1->isAlive() || !player2->isAlive();
 }
 
@@ -1559,6 +1921,7 @@ void Game::resolveCombat(
             *defenseCard,
             !attackerWon);
     }
+    removeDefeatedSidekicks();
 }
 void Game::modifyDefenseValue(
     Character *defender,
@@ -1616,9 +1979,25 @@ void Game::modifyAttackValue(
 
         for (int i = 0; i < count; i++)
         {
-            attacker->discardCard(0);
-        }
+            attacker->showHand();
 
+            cout << "Choose card index to discard: ";
+
+            int index;
+            cin >> index;
+
+            while (index < 0 || index >= attacker->getHandSize())
+            {
+                cout << "Invalid card index. Try again: ";
+                cin >> index;
+            }
+
+            Card discarded = attacker->getCardFromHand(index);
+
+            attacker->discardCard(index);
+
+            cout << discarded.getName() << " was discarded.\n";
+        }
         attackValue += count;
         break;
     }
@@ -1825,11 +2204,7 @@ void Game::useCharacterAbility(Character *character)
 
     for (int i = 0; i < static_cast<int>(validTargets.size()); i++)
     {
-        cout << i << ". "
-             << validTargets[i]->getName()
-             << " (HP: "
-             << validTargets[i]->getHealth()
-             << ")\n";
+        cout << i << ". " << validTargets[i]->getName() << " HP: " << validTargets[i]->getHealth() << endl;
     }
 
     int targetIndex;
@@ -1846,9 +2221,7 @@ void Game::useCharacterAbility(Character *character)
 
     target->takeDamage(1);
 
-    cout << target->getName()
-         << " took 1 damage.\n";
-
+    cout << target->getName() << " took 1 damage.\n";
     try
     {
         dracula->drawCard();
@@ -1857,9 +2230,8 @@ void Game::useCharacterAbility(Character *character)
     }
     catch (const exception &e)
     {
-        cout << "Could not draw card: "
-             << e.what()
-             << endl;
+        cout << "Could not draw card: " << e.what() << endl;
+        applyFatigueDamage(dracula);
     }
 }
 vector<Character *> Game::getFighters(Character *hero)
@@ -1867,34 +2239,103 @@ vector<Character *> Game::getFighters(Character *hero)
     vector<Character *> fighters;
 
     if (hero == nullptr)
-        return fighters;
-
-    fighters.push_back(hero);
-
-    Sherlock *sherlock = dynamic_cast<Sherlock *>(hero);
-
-    if (sherlock != nullptr)
     {
-        if (sherlock->getWatson().isAlive())
-        {
-            fighters.push_back(&sherlock->getWatson());
-        }
-
         return fighters;
     }
 
-    Dracula *dracula = dynamic_cast<Dracula *>(hero);
-
-    if (dracula != nullptr)
+    if (hero->isAlive() &&
+        hero->getPosition() != 0)
     {
-        for (Sister &sister : dracula->getSisters())
+        fighters.push_back(hero);
+    }
+
+    for (Character *sidekick : hero->getSidekicks())
+    {
+        if (sidekick != nullptr &&
+            sidekick->isAlive() &&
+            sidekick->getPosition() != 0)
         {
-            if (sister.isAlive())
-            {
-                fighters.push_back(&sister);
-            }
+            fighters.push_back(sidekick);
         }
     }
 
     return fighters;
+}
+Character *Game::chooseAttackingFighter(Character *hero)
+{
+    vector<Character *> fighters = getFighters(hero);
+
+    if (fighters.empty())
+    {
+        throw runtime_error("No available fighter.");
+    }
+
+    cout << "\nChoose attacking fighter:\n";
+
+    for (int i = 0;
+         i < static_cast<int>(fighters.size());
+         i++)
+    {
+        cout << i << ". "
+             << fighters[i]->getName()
+             << " (HP: "
+             << fighters[i]->getHealth()
+             << ", Space: "
+             << fighters[i]->getPosition()
+             << ")\n";
+    }
+
+    int choice;
+
+    while (true)
+    {
+        cout << "Choice: ";
+        cin >> choice;
+
+        if (!cin.fail() &&
+            choice >= 0 &&
+            choice < static_cast<int>(fighters.size()))
+        {
+            return fighters[choice];
+        }
+
+        cin.clear();
+        cin.ignore(1000, '\n');
+
+        cout << "Invalid fighter choice.\n";
+    }
+}
+bool Game::shareZone(
+    Character *first,
+    Character *second) const
+{
+    if (first == nullptr || second == nullptr)
+    {
+        return false;
+    }
+
+    if (first->getPosition() == 0 ||
+        second->getPosition() == 0)
+    {
+        return false;
+    }
+
+    const Space *firstSpace =
+        board.getSpace(first->getPosition());
+
+    const Space *secondSpace =
+        board.getSpace(second->getPosition());
+
+    for (Zone firstZone : firstSpace->getZones())
+    {
+        for (Zone secondZone : secondSpace->getZones())
+        {
+            if (firstZone == secondZone)
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
 }

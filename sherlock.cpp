@@ -1,8 +1,7 @@
 #include "sherlock.hpp"
 #include <iostream>
 using namespace std;
-
-Sherlock::Sherlock() : Character("Sherlock Holmes", 16, 2)
+Sherlock::Sherlock() : Character("Sherlock Holmes", 16, 2, AttackRange::Melee)
 {
     initializeDeck();
     drawStartingHand();
