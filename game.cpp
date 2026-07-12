@@ -313,7 +313,38 @@ void Game::scheme(Character *character)
 
     int index;
     cin >> index;
+    int index;
 
+    while (true)
+    {
+        cout << "Choose a Scheme card index: ";
+        cin >> index;
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+
+            cout << "Invalid input. Enter a number.\n";
+            continue;
+        }
+
+        if (index < 0 ||index >= character->getHandSize())
+        {
+            cout << "Invalid card index.\n";
+            continue;
+        }
+
+        Card card = character->getCardFromHand(index);
+
+        if (card.getType() != CardType::Scheme)
+        {
+            cout << "Selected card is not a Scheme card.\n";
+            continue;
+        }
+
+        break;
+    }
     Card card = character->getCardFromHand(index);
     if (card.getFighterType() == FighterType::Sidekick)
     {
