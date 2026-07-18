@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/sisters.cpp.obj.d"
   "CMakeFiles/app.dir/space.cpp.obj"
   "CMakeFiles/app.dir/space.cpp.obj.d"
+  "CMakeFiles/app.dir/tui.cpp.obj"
+  "CMakeFiles/app.dir/tui.cpp.obj.d"
   "app.exe"
   "app.exe.manifest"
   "app.pdb"

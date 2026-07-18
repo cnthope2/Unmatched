@@ -40,6 +40,9 @@ public:
     int getMovement() const;
     void setPosition(int newPosition);
     int getZoneId() const;
+    const Deck &getDeck() const;
+    const DiscardPile &getDiscardPile() const;
+    int getMaxHealth() const;
     void showHand() const;
     bool useBoost(int cardIndex);
     void setZoneId(int zone);

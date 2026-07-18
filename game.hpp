@@ -18,11 +18,15 @@ private:
     void placeSidekicks(Character *player);
     bool isAdjacent(int from, int to) const;
     bool isTeammate(Character *hero, Character *other);
+    std::vector<string> actionLog;
 
 public:
+    void addLog(const string &message);
+    const vector<string> &getActionLog() const;
     Game(Character *p1, Character *p2);
     vector<Character *> getFighters(Character *hero);
     Character *chooseAttackingFighter(Character *hero);
+    void setupGame(bool player1IsYounger);
     void placeCharacter(Character *character, int spaceId);
     void moveCharacter(Character *character, int destination);
     Character *getHeroOwner(Character *fighter) const;
@@ -33,11 +37,20 @@ public:
     void startGame(bool player1isyounger);
     void nextTurn();
     bool isGameOver() const;
+    int getActionsRemaining() const;
     void removeFighterFromBoard(Character *fighter);
     void removeDefeatedSidekicks();
     void maneuver(Character *character);
+    bool beginManeuver();
+    bool moveDuringManeuver(Character *fighter, int destination);
+    void finishManeuver();
     void playTurn(Character *character);
     void scheme(Character *character);
+    bool resolveCombatFromTUI(
+        Character *attacker,
+        Character *defender,
+        int attackCardIndex,
+        int defenseCardIndex);
     bool attack(Character *attacker);
     int chooseAttackCard(Character *attacker);
     int chooseDefenseCard(Character *defender);
@@ -88,6 +101,7 @@ public:
     bool shareZone(
         Character *first,
         Character *second) const;
+    Character *getWinner() const;
 };
 
 #endif

@@ -1,7 +1,10 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/cmake_install.cmake"
+		"C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/cmake_install.cmake",
+		"C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-build/cmake_install.cmake",
+		"C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-build/examples/cmake_install.cmake",
+		"C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-build/doc/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

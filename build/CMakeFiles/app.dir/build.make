@@ -72,6 +72,7 @@ CMakeFiles/app.dir/codegen:
 .PHONY : CMakeFiles/app.dir/codegen
 
 CMakeFiles/app.dir/main.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/main.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/main.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/main.cpp
 CMakeFiles/app.dir/main.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/main.cpp.obj"
@@ -86,6 +87,7 @@ CMakeFiles/app.dir/main.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\main.cpp -o CMakeFiles\app.dir\main.cpp.s
 
 CMakeFiles/app.dir/character.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/character.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/character.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/character.cpp
 CMakeFiles/app.dir/character.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/character.cpp.obj"
@@ -100,6 +102,7 @@ CMakeFiles/app.dir/character.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\character.cpp -o CMakeFiles\app.dir\character.cpp.s
 
 CMakeFiles/app.dir/dracula.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/dracula.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/dracula.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/dracula.cpp
 CMakeFiles/app.dir/dracula.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/dracula.cpp.obj"
@@ -114,6 +117,7 @@ CMakeFiles/app.dir/dracula.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\dracula.cpp -o CMakeFiles\app.dir\dracula.cpp.s
 
 CMakeFiles/app.dir/sisters.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/sisters.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/sisters.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/sisters.cpp
 CMakeFiles/app.dir/sisters.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/sisters.cpp.obj"
@@ -128,6 +132,7 @@ CMakeFiles/app.dir/sisters.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sisters.cpp -o CMakeFiles\app.dir\sisters.cpp.s
 
 CMakeFiles/app.dir/card.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/card.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/card.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/card.cpp
 CMakeFiles/app.dir/card.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/card.cpp.obj"
@@ -142,6 +147,7 @@ CMakeFiles/app.dir/card.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\card.cpp -o CMakeFiles\app.dir\card.cpp.s
 
 CMakeFiles/app.dir/deck.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/deck.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/deck.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/deck.cpp
 CMakeFiles/app.dir/deck.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/deck.cpp.obj"
@@ -156,6 +162,7 @@ CMakeFiles/app.dir/deck.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\deck.cpp -o CMakeFiles\app.dir\deck.cpp.s
 
 CMakeFiles/app.dir/hand.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/hand.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/hand.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/hand.cpp
 CMakeFiles/app.dir/hand.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/hand.cpp.obj"
@@ -170,6 +177,7 @@ CMakeFiles/app.dir/hand.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\hand.cpp -o CMakeFiles\app.dir\hand.cpp.s
 
 CMakeFiles/app.dir/space.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/space.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/space.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/space.cpp
 CMakeFiles/app.dir/space.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/space.cpp.obj"
@@ -184,6 +192,7 @@ CMakeFiles/app.dir/space.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\space.cpp -o CMakeFiles\app.dir\space.cpp.s
 
 CMakeFiles/app.dir/board.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/board.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/board.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/board.cpp
 CMakeFiles/app.dir/board.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/app.dir/board.cpp.obj"
@@ -198,6 +207,7 @@ CMakeFiles/app.dir/board.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\board.cpp -o CMakeFiles\app.dir\board.cpp.s
 
 CMakeFiles/app.dir/game.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/game.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/game.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/game.cpp
 CMakeFiles/app.dir/game.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/app.dir/game.cpp.obj"
@@ -212,6 +222,7 @@ CMakeFiles/app.dir/game.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.cpp -o CMakeFiles\app.dir\game.cpp.s
 
 CMakeFiles/app.dir/sherlock.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/sherlock.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/sherlock.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/sherlock.cpp
 CMakeFiles/app.dir/sherlock.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/app.dir/sherlock.cpp.obj"
@@ -226,6 +237,7 @@ CMakeFiles/app.dir/sherlock.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.cpp -o CMakeFiles\app.dir\sherlock.cpp.s
 
 CMakeFiles/app.dir/Watson.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/Watson.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/Watson.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/Watson.cpp
 CMakeFiles/app.dir/Watson.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/app.dir/Watson.cpp.obj"
@@ -240,6 +252,7 @@ CMakeFiles/app.dir/Watson.cpp.s: cmake_force
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\Watson.cpp -o CMakeFiles\app.dir\Watson.cpp.s
 
 CMakeFiles/app.dir/discardpile.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/discardpile.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/discardpile.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/discardpile.cpp
 CMakeFiles/app.dir/discardpile.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/app.dir/discardpile.cpp.obj"
@@ -252,6 +265,21 @@ CMakeFiles/app.dir/discardpile.cpp.i: cmake_force
 CMakeFiles/app.dir/discardpile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/discardpile.cpp.s"
 	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\discardpile.cpp -o CMakeFiles\app.dir\discardpile.cpp.s
+
+CMakeFiles/app.dir/tui.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/tui.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
+CMakeFiles/app.dir/tui.cpp.obj: C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/tui.cpp
+CMakeFiles/app.dir/tui.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/app.dir/tui.cpp.obj"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/tui.cpp.obj -MF CMakeFiles\app.dir\tui.cpp.obj.d -o CMakeFiles\app.dir\tui.cpp.obj -c C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\tui.cpp
+
+CMakeFiles/app.dir/tui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/tui.cpp.i"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\tui.cpp > CMakeFiles\app.dir\tui.cpp.i
+
+CMakeFiles/app.dir/tui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/tui.cpp.s"
+	C:\Users\pascalpc.ir\scoop\apps\mingw\current\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\tui.cpp -o CMakeFiles\app.dir\tui.cpp.s
 
 # Object files for target app
 app_OBJECTS = \
@@ -267,7 +295,8 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/game.cpp.obj" \
 "CMakeFiles/app.dir/sherlock.cpp.obj" \
 "CMakeFiles/app.dir/Watson.cpp.obj" \
-"CMakeFiles/app.dir/discardpile.cpp.obj"
+"CMakeFiles/app.dir/discardpile.cpp.obj" \
+"CMakeFiles/app.dir/tui.cpp.obj"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
@@ -285,11 +314,17 @@ app.exe: CMakeFiles/app.dir/game.cpp.obj
 app.exe: CMakeFiles/app.dir/sherlock.cpp.obj
 app.exe: CMakeFiles/app.dir/Watson.cpp.obj
 app.exe: CMakeFiles/app.dir/discardpile.cpp.obj
+app.exe: CMakeFiles/app.dir/tui.cpp.obj
 app.exe: CMakeFiles/app.dir/build.make
+app.exe: _deps/ftxui-build/libftxui-screen.a
+app.exe: _deps/ftxui-build/libftxui-dom.a
+app.exe: _deps/ftxui-build/libftxui-component.a
+app.exe: _deps/ftxui-build/libftxui-dom.a
+app.exe: _deps/ftxui-build/libftxui-screen.a
 app.exe: CMakeFiles/app.dir/linkLibs.rsp
 app.exe: CMakeFiles/app.dir/objects1.rsp
 app.exe: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable app.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable app.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\app.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

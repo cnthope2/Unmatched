@@ -1,24 +1,80 @@
 CMakeFiles/app.dir/tui.cpp.obj: \
  C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\tui.cpp \
  C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\tui.hpp \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/string \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\game.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\board.hpp \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/requires_hosted.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/pstl/pstl_config.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stringfwd.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_algobase.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/functexcept.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/exception_defines.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/cpp_type_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/version.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/type_traits \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/type_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/numeric_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_pair.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/move.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/utility.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_types.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_funcs.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/concept_check.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/debug/assertions.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_iterator.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ptr_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/debug/debug.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/predefined_ops.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bit \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/concepts \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/allocator.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/new_allocator.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/new \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/exception.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/memoryfwd.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/char_traits.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/postypes.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cwchar \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/wchar.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_construct.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/alloc_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/alloc_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/initializer_list \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/functional_hash.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/hash_bytes.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/refwrap.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/invoke.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_function.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/backward/binders.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/range_access.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/memory_resource.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstddef \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stddef.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/crtdefs.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/corecrt.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw_mac.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw_secapi.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/vadefs.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\space.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\character.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\deck.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\card.hpp \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/string \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stringfwd.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/char_traits.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/postypes.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cwchar \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/wchar.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/corecrt_wctype.h \
@@ -26,22 +82,10 @@ CMakeFiles/app.dir/tui.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw_stat64.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/swprintf.inl \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/type_traits \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/version.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/allocator.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/new_allocator.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/new \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/exception.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/functexcept.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/exception_defines.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/move.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/cpp_type_traits.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/localefwd.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/clocale \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/locale.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/crtdefs.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stdio.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/iosfwd \
@@ -49,34 +93,8 @@ CMakeFiles/app.dir/tui.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/ctype.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ostream_insert.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/cxxabi_forced.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_funcs.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/concept_check.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/debug/assertions.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_types.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_iterator.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/type_traits.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/ptr_traits.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_function.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/backward/binders.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/numeric_traits.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_algobase.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_pair.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/utility.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/debug/debug.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/predefined_ops.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bit \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/concepts \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/refwrap.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/invoke.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/range_access.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/initializer_list \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_string.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/alloc_traits.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/alloc_traits.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_construct.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/string_view \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/functional_hash.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/hash_bytes.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/string_view.tcc \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/string_conversions.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstdlib \
@@ -94,30 +112,14 @@ CMakeFiles/app.dir/tui.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cerrno \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/charconv.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/memory_resource.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstddef \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stddef.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/tuple \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/vector \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/component/component.hpp \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/functional \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/std_function.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/typeinfo \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/unordered_map \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/unordered_map.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/hashtable.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/hashtable_policy.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/aligned_buffer.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/enable_special_members.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/node_handle.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/erase_if.h \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\discardpile.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\hand.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sherlock.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\watson.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\dracula.hpp \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\sisters.hpp \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/utility \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_relops.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/array \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/compare \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/memory \
@@ -127,7 +129,9 @@ CMakeFiles/app.dir/tui.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/unique_ptr.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/shared_ptr.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/shared_ptr_base.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/typeinfo \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/allocated_ptr.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/aligned_buffer.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/ext/atomicity.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -157,21 +161,29 @@ CMakeFiles/app.dir/tui.cpp.obj: \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/backward/auto_ptr.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/pstl/glue_memory_defs.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/pstl/execution_defs.h \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/utility \
- C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/stl_relops.h \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/component/component_base.hpp \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/component/captured_mouse.hpp \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/util/export.hpp \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/functional \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/std_function.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/unordered_map \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/unordered_map.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/hashtable.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/hashtable_policy.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/enable_special_members.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/node_handle.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/bits/erase_if.h \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/screen/color.hpp \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstdint \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
  C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stdint.h \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/canvas.hpp \
- C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/screen/color.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/util/export.hpp \
  C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/screen/surface.hpp \
  C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/screen/box.hpp \
  C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/screen/cell.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/component/component.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/util/warn_windows_macro.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/component/component_base.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/component/captured_mouse.hpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/elements.hpp \
  C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/direction.hpp \
  C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp \
  C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/linear_gradient.hpp \

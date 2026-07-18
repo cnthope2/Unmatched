@@ -1,16 +1,20 @@
+#ifndef TUI_HPP
+#define TUI_HPP
 
-// #ifndef TUI_HPP
-// #define TUI_HPP
+class Game;
 
-// class TUI
-// {
-// public:
-//     void run();
+class TUI
+{
+private:
+    Game& game;
 
-// private:
-//     void runMainMenu();
-//     void runGameDashboard();
-//     void runHelp();
-// };
+    void runMainMenu();
+    void runGameDashboard();
+    void runHelp();
 
-// #endif
+public:
+    explicit TUI(Game& game);
+    void run();
+};
+
+#endif

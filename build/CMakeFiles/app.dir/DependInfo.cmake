@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/sherlock.cpp" "CMakeFiles/app.dir/sherlock.cpp.obj" "gcc" "CMakeFiles/app.dir/sherlock.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/sisters.cpp" "CMakeFiles/app.dir/sisters.cpp.obj" "gcc" "CMakeFiles/app.dir/sisters.cpp.obj.d"
   "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/space.cpp" "CMakeFiles/app.dir/space.cpp.obj" "gcc" "CMakeFiles/app.dir/space.cpp.obj.d"
+  "C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/tui.cpp" "CMakeFiles/app.dir/tui.cpp.obj" "gcc" "CMakeFiles/app.dir/tui.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

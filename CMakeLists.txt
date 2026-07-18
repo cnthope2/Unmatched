@@ -5,6 +5,13 @@ project(
     LANGUAGES CXX
     VERSION 1.0.0
 )
+include(FetchContent)
+
+FetchContent_Declare(
+    ftxui
+    GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI.git
+    GIT_TAG main
+)
 
 add_executable(app
     main.cpp
@@ -20,5 +27,13 @@ add_executable(app
     sherlock.cpp
     Watson.cpp
     discardpile.cpp
-   
+    tui.cpp
+)
+FetchContent_MakeAvailable(ftxui)
+
+target_link_libraries(app
+    PRIVATE
+    ftxui::screen
+    ftxui::dom
+    ftxui::component
 )
