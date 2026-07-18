@@ -59,7 +59,11 @@ bool Character::isAlive() const
 {
     return health > 0;
 }
+int Character::getMaxHealth() const
+{
+    return maxHealth;
 
+}
 int Character::getHealth() const
 {
     return health;
@@ -72,6 +76,15 @@ int Character::getPosition() const
 int Character::getMovement() const
 {
     return movement;
+}
+const Deck &Character::getDeck() const
+{
+    return deck;
+}
+
+const DiscardPile &Character::getDiscardPile() const
+{
+    return discardPile;
 }
 void Character::setPosition(int newPosition)
 {

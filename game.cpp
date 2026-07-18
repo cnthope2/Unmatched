@@ -35,7 +35,10 @@ void Game::placeCharacter(Character *character, int spaceId)
     character->setPosition(spaceId);
     space->setOccupant(character);
 }
-
+int Game::getActionsRemaining() const
+{
+    return actionsRemaining;
+}
 void Game::startGame(bool player1IsYounger)
 {
     initialPlacement(player1IsYounger);
@@ -171,6 +174,21 @@ void Game::placeSidekicks(Character *player)
         }
     }
 }
+void Game::setupGame(bool player1IsYounger)
+{
+    initialPlacement(player1IsYounger);
+
+    if (player1IsYounger)
+    {
+        currentPlayer = 1;
+    }
+    else
+    {
+        currentPlayer = 2;
+    }
+
+    actionsRemaining = 2;
+}
 bool Game::isAdjacent(int from, int to) const
 {
     const Space *current = board.getSpace(from);
@@ -300,6 +318,65 @@ void Game::maneuver(Character *character)
         cout << "Invalid move." << endl;
     }
 }
+bool Game::beginManeuver()
+{
+    Character *player = getCurrentPlayer();
+
+    if (player == nullptr || actionsRemaining <= 0)
+    {
+        return false;
+    }
+    addLog(getCurrentPlayer()->getName() + " used Maneuver.");
+
+    try
+    {
+
+        player->drawCard();
+    }
+    catch (const std::exception &)
+    {
+
+        applyFatigueDamage(player);
+
+        for (Character *sidekick : player->getSidekicks())
+        {
+            if (sidekick != nullptr && sidekick->isAlive())
+            {
+                applyFatigueDamage(sidekick);
+            }
+        }
+    }
+
+    return true;
+}
+bool Game::moveDuringManeuver(Character *fighter, int destination)
+{
+    if (fighter == nullptr)
+    {
+        return false;
+    }
+
+    if (!canMove(fighter, destination))
+    {
+        return false;
+    }
+
+    moveCharacter(fighter, destination);
+
+    return true;
+}
+void Game::finishManeuver()
+{
+    if (actionsRemaining > 0)
+    {
+        --actionsRemaining;
+    }
+
+    if (actionsRemaining == 0)
+    {
+        nextTurn();
+    }
+}
 void Game::scheme(Character *character)
 {
     if (character == nullptr)
@@ -314,6 +391,36 @@ void Game::scheme(Character *character)
     int index;
     cin >> index;
 
+    while (true)
+    {
+        cout << "Choose a Scheme card index: ";
+        cin >> index;
+
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+
+            cout << "Invalid input. Enter a number.\n";
+            continue;
+        }
+
+        if (index < 0 || index >= character->getHandSize())
+        {
+            cout << "Invalid card index.\n";
+            continue;
+        }
+
+        Card card = character->getCardFromHand(index);
+
+        if (card.getType() != CardType::Scheme)
+        {
+            cout << "Selected card is not a Scheme card.\n";
+            continue;
+        }
+
+        break;
+    }
     Card card = character->getCardFromHand(index);
     if (card.getFighterType() == FighterType::Sidekick)
     {
@@ -698,6 +805,7 @@ void Game::scheme(Character *character)
     }
 
     character->discardCard(index);
+    addLog(getCurrentPlayer()->getName() + " used scheme.");
 }
 
 bool Game::attack(Character *attacker)
@@ -1552,6 +1660,13 @@ void Game::initialPlacement(bool player1IsYounger)
 
 void Game::nextTurn()
 {
+    Character *endingPlayer = getCurrentPlayer();
+
+    if (endingPlayer != nullptr)
+    {
+        addLog(endingPlayer->getName() + "'s turn ended.");
+    }
+
     if (currentPlayer == 1)
     {
         currentPlayer = 2;
@@ -1559,6 +1674,15 @@ void Game::nextTurn()
     else
     {
         currentPlayer = 1;
+    }
+
+    actionsRemaining = 2;
+
+    Character *newPlayer = getCurrentPlayer();
+
+    if (newPlayer != nullptr)
+    {
+        addLog(newPlayer->getName() + "'s turn started.");
     }
 }
 void Game::removeFighterFromBoard(Character *fighter)
@@ -1683,6 +1807,7 @@ void Game::moveCharacter(Character *character, int destination)
 
     next->setOccupant(character);
     character->setPosition(destination);
+    addLog(character->getName() + " moved to " + std::to_string(destination));
 }
 void Game::moveCharacterByEffect(Character *character, int maxDistance)
 {
@@ -1807,6 +1932,64 @@ bool Game::canMove(Character *character, int destination)
 
     return false;
 }
+bool Game::resolveCombatFromTUI(
+    Character *attacker,
+    Character *defender,
+    int attackCardIndex,
+    int defenseCardIndex)
+{
+    if (attacker == nullptr || defender == nullptr)
+    {
+        return false;
+    }
+
+    Character *attackingPlayer = getCurrentPlayer();
+    Character *defendingPlayer = getOpponent();
+
+    if (attackingPlayer == nullptr || defendingPlayer == nullptr)
+    {
+        return false;
+    }
+
+    Card attackCard =
+        attackingPlayer->getCardFromHand(attackCardIndex);
+
+    Card *defenseCard = nullptr;
+
+    if (defenseCardIndex >= 0)
+    {
+        defenseCard = new Card(
+            defendingPlayer->getCardFromHand(defenseCardIndex));
+    }
+
+    addLog(attacker->getName() + " attacked " + defender->getName());
+    resolveCombat(
+        attacker,
+        defender,
+        attackCard,
+        defenseCard);
+
+    attackingPlayer->discardCard(attackCardIndex);
+
+    if (defenseCardIndex >= 0)
+    {
+        defendingPlayer->discardCard(defenseCardIndex);
+    }
+
+    delete defenseCard;
+
+    if (actionsRemaining > 0)
+    {
+        --actionsRemaining;
+    }
+
+    if (actionsRemaining == 0)
+    {
+        nextTurn();
+    }
+
+    return true;
+}
 
 void Game::resolveCombat(
     Character *attacker,
@@ -1823,7 +2006,14 @@ void Game::resolveCombat(
     if (defenseCard != nullptr)
     {
         defenseValue = defenseCard->getDefenseValue();
+        addLog(defender->getName() + " defended with " +
+               defenseCard->getName());
     }
+    else
+    {
+        addLog(defender->getName() + " did not defend.");
+    }
+
     if (attackCard.getEffect() == CardEffect::Feint &&
         defenseCard != nullptr)
     {
@@ -1901,7 +2091,8 @@ void Game::resolveCombat(
 
     defender->takeDamage(damage);
 
-    cout << defender->getName() << " took " << damage << " damage." << endl;
+    addLog(defender->getName() + " took " +
+           std::to_string(damage) + " damage.");
 
     if (!attackEffectCancelled)
     {
@@ -1921,7 +2112,13 @@ void Game::resolveCombat(
             *defenseCard,
             !attackerWon);
     }
+
     removeDefeatedSidekicks();
+
+    if (defender->getHealth() <= 0)
+    {
+        addLog(defender->getName() + " was defeated.");
+    }
 }
 void Game::modifyDefenseValue(
     Character *defender,
@@ -2338,4 +2535,30 @@ bool Game::shareZone(
     }
 
     return false;
+}
+Character *Game::getWinner() const
+{
+    if (player1 != nullptr && player1->isAlive())
+    {
+        return player1;
+    }
+
+    if (player2 != nullptr && player2->isAlive())
+    {
+        return player2;
+    }
+
+    return nullptr;
+}
+void Game::addLog(const std::string &message)
+{
+    actionLog.push_back(message);
+
+    if (actionLog.size() > 50)
+        actionLog.erase(actionLog.begin());
+}
+
+const std::vector<std::string> &Game::getActionLog() const
+{
+    return actionLog;
 }
