@@ -125,11 +125,9 @@ bool Character::useBoost(int cardIndex)
         return false;
     }
 
-    int boost = card.getBoost();
-
+    movement += card.getBoost();
+    discardPile.addCard(card);
     hand.removeCard(cardIndex);
-
-    movement += boost;
 
     return true;
 }

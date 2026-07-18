@@ -1,0 +1,80 @@
+[
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\main.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\main.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/main.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\character.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\character.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/character.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/character.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\dracula.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\dracula.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/dracula.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/dracula.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\sisters.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\sisters.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/sisters.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/sisters.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\card.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\card.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/card.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/card.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\deck.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\deck.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/deck.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/deck.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\hand.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\hand.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/hand.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/hand.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\space.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\space.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/space.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/space.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\board.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\board.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/board.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/board.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\game.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\game.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/game.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/game.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\sherlock.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\sherlock.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/sherlock.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/sherlock.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\Watson.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\Watson.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/Watson.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/Watson.cpp.obj"
+},
+{
+  "directory": "C:/Users/Zohdi/Unmatched/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -g -o CMakeFiles\\app.dir\\discardpile.cpp.obj -c C:\\Users\\Zohdi\\Unmatched\\discardpile.cpp",
+  "file": "C:/Users/Zohdi/Unmatched/discardpile.cpp",
+  "output": "C:/Users/Zohdi/Unmatched/build/CMakeFiles/app.dir/discardpile.cpp.obj"
+}
+]

@@ -1,0 +1,15 @@
+# ninja log v7
+24	1065	8055772207192787	CMakeFiles/app.dir/card.cpp.obj	6a810ca00fa4aa26
+18	1194	8055772207140930	CMakeFiles/app.dir/sisters.cpp.obj	ddf1d9f9821e1604
+31	1248	8055772207262693	CMakeFiles/app.dir/deck.cpp.obj	f28e2433f7830e5d
+74	1317	8055772207698123	CMakeFiles/app.dir/Watson.cpp.obj	21bd268009d9bc0a
+42	1337	8055772207381989	CMakeFiles/app.dir/space.cpp.obj	c84607a70b8393f3
+36	1374	8055772207323416	CMakeFiles/app.dir/hand.cpp.obj	1aecce75818a343b
+80	1375	8055772207765431	CMakeFiles/app.dir/discardpile.cpp.obj	1d3fd17e357ed5b6
+47	1533	8055772207433133	CMakeFiles/app.dir/board.cpp.obj	2f6cb287356dc82a
+3	1840	8055772206880276	CMakeFiles/app.dir/main.cpp.obj	c9646f5316c822b4
+8	1863	8055772207004154	CMakeFiles/app.dir/character.cpp.obj	e4b77de0d1fa4b35
+66	1871	8055772207611887	CMakeFiles/app.dir/sherlock.cpp.obj	997bf2088143235c
+13	1988	8055772207004154	CMakeFiles/app.dir/dracula.cpp.obj	bc54395982a902fd
+54	2379	8055772207502664	CMakeFiles/app.dir/game.cpp.obj	1ae229e291e2686c
+2379	2750	8055772230731826	app.exe	7e67bf3d2118083d
