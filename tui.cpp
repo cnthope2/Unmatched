@@ -6,6 +6,7 @@
 #include <array>
 #include <memory>
 #include <utility>
+#include <iostream>
 #include <ftxui/dom/canvas.hpp>
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/screen_interactive.hpp>
@@ -669,6 +670,11 @@ void TUI::runGameDashboard()
     std::vector<int> defenseCardIndexes;
     int selectedDefenseCard = 0;
     int selectedAttackCardIndex = -1;
+    std::vector<std::string> schemeCards;
+    std::vector<int> schemeCardIndexes;
+    int selectedSchemeCard = 0;
+    std::vector<std::string> abilityItems;
+    int selectedAbility = 0;
     MenuOption actionOption;
     MenuOption targetOption;
 
@@ -839,10 +845,99 @@ void TUI::runGameDashboard()
         attackCards.push_back("Cancel");
     };
 
+    auto refreshSchemeCardMenu = [&]()
+    {
+        schemeCards.clear();
+        schemeCardIndexes.clear();
+        selectedSchemeCard = 0;
+
+        Character *current = game.getCurrentPlayer();
+
+        if (current == nullptr)
+        {
+            schemeCards.push_back("Cancel");
+            return;
+        }
+
+        const auto &cards = current->getHand().getCards();
+
+        for (int i = 0; i < static_cast<int>(cards.size()); ++i)
+        {
+            const Card &card = cards[i];
+
+            if (card.getType() != CardType::Scheme)
+            {
+                continue;
+            }
+
+            schemeCards.push_back(card.getName());
+
+            schemeCardIndexes.push_back(i);
+        }
+
+        if (schemeCardIndexes.empty())
+        {
+            schemeCards.push_back("No playable Scheme cards");
+        }
+
+        schemeCards.push_back("Cancel");
+    };
+
+    MenuOption schemeCardOption;
+
+    schemeCardOption.on_enter = [&]()
+    {
+        int cancelIndex = static_cast<int>(schemeCards.size()) - 1;
+
+        if (selectedSchemeCard == cancelIndex)
+        {
+            activeMenu = 0;
+            return;
+        }
+
+        if (schemeCardIndexes.empty())
+        {
+            activeMenu = 0;
+            return;
+        }
+
+        if (selectedSchemeCard < 0 || selectedSchemeCard >= static_cast<int>(schemeCardIndexes.size()))
+        {
+            activeMenu = 0;
+            return;
+        }
+
+        int handIndex = schemeCardIndexes[selectedSchemeCard];
+
+        game.playSchemeFromTUI(game.getCurrentPlayer(), handIndex);
+        activeMenu = 0;
+    };
+
+    Component schemeCardMenu = Menu(&schemeCards, &selectedSchemeCard, schemeCardOption);
+    MenuOption abilityOption;
+
+    abilityOption.on_enter = [&]()
+    {
+        Character *current = game.getCurrentPlayer();
+
+        if (current == nullptr)
+            return;
+
+        if (selectedAbility == 1)
+        {
+            activeMenu = 0;
+            return;
+        }
+
+        game.useCharacterAbility(current);
+
+        activeMenu = 0;
+    };
+
+    Component abilityMenu = Menu(&abilityItems, &selectedAbility, abilityOption);
     targetOption.on_enter = [&]
     {
-        if (selectedTarget ==
-            static_cast<int>(targets.size()) - 1)
+        if (selectedTarget == static_cast<int>(targets.size()) - 1)
         {
             atackMood = false;
             attacker = nullptr;
@@ -887,11 +982,27 @@ void TUI::runGameDashboard()
         }
         else if (selectedAction == 2)
         {
-            game.scheme(current);
+            refreshSchemeCardMenu();
+            activeMenu = 6;
+            return;
         }
         else if (selectedAction == 3)
         {
-            game.useCharacterAbility(current);
+            abilityItems.clear();
+
+            if (current->getName() == "Dracula")
+            {
+                abilityItems.push_back("Feed");
+            }
+            else if (current->getName() == "Sherlock Holmes")
+            {
+                abilityItems.push_back("Detective Ability");
+            }
+
+            abilityItems.push_back("Cancel");
+
+            selectedAbility = 0;
+            activeMenu = 7;
         }
         else if (selectedAction == 4)
         {
@@ -1003,7 +1114,9 @@ void TUI::runGameDashboard()
              destinationMenu,
              targetMenu,
              attackCardMenu,
-             defenseCardMenu},
+             defenseCardMenu,
+             schemeCardMenu,
+             abilityMenu},
             &activeMenu);
     Component mainContainer =
         Container::Vertical({
@@ -1196,7 +1309,11 @@ void TUI::runGameDashboard()
                                   ? targetMenu
                               : activeMenu == 4
                                   ? attackCardMenu
-                                  : defenseCardMenu)}) |
+                              : activeMenu == 5
+                                  ? defenseCardMenu
+                              : activeMenu == 6
+                                  ? schemeCardMenu
+                                  : abilityMenu)}) |
                     size(HEIGHT, EQUAL, 9);
 
                 Element bottomPanels =
@@ -1229,4 +1346,4 @@ void TUI::runGameDashboard()
     {
         return;
     }
-}
+};

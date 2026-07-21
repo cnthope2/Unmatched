@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=C:/Users/pascalpc.ir/scoop/apps/cmake/current/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/CMakeFiles/fc-tmp/ftxui/ftxui-gitclone.cmake
-source_dir=C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src
-work_dir=C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps
+command=C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/Zohdi/Unmatched/build/CMakeFiles/fc-tmp/ftxui/ftxui-gitclone.cmake
+source_dir=C:/Users/Zohdi/Unmatched/build/_deps/ftxui-src
+work_dir=C:/Users/Zohdi/Unmatched/build/_deps
 repository=https://github.com/ArthurSonzogni/FTXUI.git
 remote=origin
 init_submodules=TRUE

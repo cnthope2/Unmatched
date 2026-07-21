@@ -10,7 +10,7 @@ include(FetchContent)
 FetchContent_Declare(
     ftxui
     GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI.git
-    GIT_TAG main
+    GIT_TAG v7.0.1
 )
 
 add_executable(app

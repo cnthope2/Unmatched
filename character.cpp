@@ -124,6 +124,7 @@ void Character::showHand() const
 
     cout << endl;
 }
+
 bool Character::useBoost(int cardIndex)
 {
     if (cardIndex < 0 || cardIndex >= hand.size())
@@ -131,16 +132,16 @@ bool Character::useBoost(int cardIndex)
         return false;
     }
 
-    const Card &card = hand.getCard(cardIndex);
+    Card card = hand.getCard(cardIndex);
 
     if (card.getBoost() <= 0)
     {
         return false;
     }
 
-    movement += card.getBoost();
-    discardPile.addCard(card);
-    hand.removeCard(cardIndex);
+    movement += card.getBoost(); 
+    discardPile.addCard(card);     
+    hand.removeCard(cardIndex);  
 
     return true;
 }

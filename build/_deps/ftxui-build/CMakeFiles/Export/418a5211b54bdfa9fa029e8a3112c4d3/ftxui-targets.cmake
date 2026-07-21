@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "3.0.0")
    message(FATAL_ERROR "CMake >= 3.0.0 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 3.0.0...4.0)
+cmake_policy(VERSION 3.0.0...4.2)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -61,7 +61,7 @@ add_library(ftxui::screen STATIC IMPORTED)
 set_target_properties(ftxui::screen PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_17"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "include"
+  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
 )
 
 # Create imported target ftxui::dom
@@ -71,7 +71,7 @@ set_target_properties(ftxui::dom PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_17"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_LINK_LIBRARIES "ftxui::screen"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "include"
+  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
 )
 
 # Create imported target ftxui::component
@@ -81,7 +81,7 @@ set_target_properties(ftxui::component PROPERTIES
   INTERFACE_COMPILE_FEATURES "cxx_std_17"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
   INTERFACE_LINK_LIBRARIES "ftxui::dom"
-  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "include"
+  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
 )
 
 # Create imported target ftxui::ftxui

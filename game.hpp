@@ -14,6 +14,7 @@ private:
     Character *player2;
     int currentPlayer;
     int actionsRemaining;
+    int maneuverMovesRemaining;
     bool effectsCancelled = false;
     void placeSidekicks(Character *player);
     bool isAdjacent(int from, int to) const;
@@ -46,11 +47,8 @@ public:
     void finishManeuver();
     void playTurn(Character *character);
     void scheme(Character *character);
-    bool resolveCombatFromTUI(
-        Character *attacker,
-        Character *defender,
-        int attackCardIndex,
-        int defenseCardIndex);
+    bool playSchemeFromTUI(Character *character, int handIndex);
+    bool resolveCombatFromTUI(Character *attacker, Character *defender, int attackCardIndex, int defenseCardIndex);
     bool attack(Character *attacker);
     int chooseAttackCard(Character *attacker);
     int chooseDefenseCard(Character *defender);

@@ -11,7 +11,9 @@ Game::Game(Character *p1, Character *p2)
     player1 = p1;
     player2 = p2;
     currentPlayer = 1;
+
     actionsRemaining = 2;
+    maneuverMovesRemaining = 0;
 }
 void Game::placeCharacter(Character *character, int spaceId)
 {
@@ -273,6 +275,7 @@ void Game::maneuver(Character *character)
     try
     {
         character->drawCard();
+        maneuverMovesRemaining = character->getMovement();
         cout << character->getName() << " drew a card." << endl;
     }
     catch (const exception &e)
@@ -321,6 +324,7 @@ void Game::maneuver(Character *character)
 bool Game::beginManeuver()
 {
     Character *player = getCurrentPlayer();
+    maneuverMovesRemaining = player->getMovement();
 
     if (player == nullptr || actionsRemaining <= 0)
     {
@@ -356,6 +360,12 @@ bool Game::moveDuringManeuver(Character *fighter, int destination)
         return false;
     }
 
+    if (maneuverMovesRemaining <= 0)
+    {
+        addLog("No movement remaining.\n");
+        return false;
+    }
+
     if (!canMove(fighter, destination))
     {
         return false;
@@ -363,10 +373,13 @@ bool Game::moveDuringManeuver(Character *fighter, int destination)
 
     moveCharacter(fighter, destination);
 
+    maneuverMovesRemaining--;
+
     return true;
 }
 void Game::finishManeuver()
 {
+    maneuverMovesRemaining = 0;
     if (actionsRemaining > 0)
     {
         --actionsRemaining;
@@ -806,6 +819,251 @@ void Game::scheme(Character *character)
 
     character->discardCard(index);
     addLog(getCurrentPlayer()->getName() + " used scheme.");
+}
+
+bool Game::playSchemeFromTUI(Character *character, int handIndex)
+{
+    if (character == nullptr)
+    {
+        return false;
+    }
+
+    if (!character->isAlive())
+    {
+        return false;
+    }
+
+    if (handIndex < 0 || handIndex >= character->getHandSize())
+    {
+        return false;
+    }
+
+    Card card = character->getCardFromHand(handIndex);
+
+    if (card.getType() != CardType::Scheme)
+    {
+        return false;
+    }
+
+    if (!hasLivingFighterForCard(character, card))
+    {
+        return false;
+    }
+
+    bool effectResolved = false;
+
+    switch (card.getEffect())
+    {
+    case CardEffect::PreyUpon:
+    {
+        Dracula *dracula = dynamic_cast<Dracula *>(character);
+
+        if (dracula == nullptr)
+        {
+            return false;
+        }
+
+        Character *opponentHero = character == player1 ? player2 : player1;
+
+        if (opponentHero == nullptr)
+        {
+            return false;
+        }
+
+        std::vector<Character *> enemyFighters;
+
+        enemyFighters.push_back(opponentHero);
+
+        for (Character *sidekick : opponentHero->getSidekicks())
+        {
+            if (sidekick != nullptr)
+            {
+                enemyFighters.push_back(sidekick);
+            }
+        }
+
+        int totalDamageDealt = 0;
+
+        for (Character *fighter : enemyFighters)
+        {
+            if (fighter == nullptr || !fighter->isAlive() || fighter->getPosition() == 0)
+            {
+                continue;
+            }
+
+            if (isAdjacent(dracula->getPosition(), fighter->getPosition()))
+            {
+                fighter->takeDamage(1);
+                totalDamageDealt++;
+            }
+        }
+
+        dracula->heal(totalDamageDealt);
+
+        effectResolved = true;
+        break;
+    }
+    case CardEffect::BaptismOfBlood:
+    {
+        Dracula *dracula = dynamic_cast<Dracula *>(character);
+
+        if (dracula == nullptr)
+        {
+            return false;
+        }
+
+        for (Character *sister : dracula->getSidekicks())
+        {
+            if (sister != nullptr && sister->isAlive())
+            {
+                sister->takeDamage(1);
+
+                dracula->heal(1);
+
+                addLog("Dracula used Baptism of Blood.");
+
+                effectResolved = true;
+                break;
+            }
+        }
+
+        break;
+    }
+    case CardEffect::MasterOfDisguise:
+    {
+        Sherlock *sherlock = dynamic_cast<Sherlock *>(character);
+
+        if (sherlock == nullptr)
+        {
+            return false;
+        }
+
+        Character *opponent = character == player1 ? player2 : player1;
+
+        if (opponent == nullptr || !opponent->isAlive())
+        {
+            return false;
+        }
+
+        int sherlockPosition = sherlock->getPosition();
+
+        int opponentPosition = opponent->getPosition();
+
+        if (sherlockPosition == 0 || opponentPosition == 0)
+        {
+            return false;
+        }
+
+        Space *sherlockSpace = board.getSpace(sherlockPosition);
+
+        Space *opponentSpace = board.getSpace(opponentPosition);
+
+        if (sherlockSpace == nullptr || opponentSpace == nullptr)
+        {
+            return false;
+        }
+
+        sherlockSpace->setOccupant(opponent);
+        opponentSpace->setOccupant(sherlock);
+
+        sherlock->setPosition(opponentPosition);
+
+        opponent->setPosition(sherlockPosition);
+
+        opponent->takeDamage(1);
+
+        effectResolved = true;
+        break;
+    }
+    case CardEffect::MistForm:
+    {
+        Dracula *dracula = dynamic_cast<Dracula *>(character);
+
+        if (dracula == nullptr)
+            return false;
+
+        addLog("Dracula used Mist Form.");
+
+        effectResolved = true;
+        break;
+    }
+    case CardEffect::RaveningSeduction:
+    {
+        Dracula *dracula = dynamic_cast<Dracula *>(character);
+
+        if (dracula == nullptr)
+            return false;
+
+        addLog("Dracula used Ravening Seduction.");
+
+        effectResolved = true;
+        break;
+    }
+    case CardEffect::AidDrWatson:
+    {
+        Sherlock *sherlock = dynamic_cast<Sherlock *>(character);
+
+        if (sherlock == nullptr)
+            return false;
+
+        for (Character *sidekick : sherlock->getSidekicks())
+        {
+            if (sidekick != nullptr)
+            {
+                sidekick->heal(3);
+
+                addLog("Watson healed by Aid Dr. Watson.");
+
+                effectResolved = true;
+                break;
+            }
+        }
+
+        break;
+    }
+    case CardEffect::ConfirmSuspicion:
+    {
+        character->drawCard();
+
+        addLog(character->getName() + " used Confirm Suspicion and drew a card.");
+
+        effectResolved = true;
+        break;
+    }
+    case CardEffect::EliminateTheImpossible:
+    {
+        character->drawCard();
+
+        addLog(character->getName() + " used Eliminate The Impossible and drew a card.");
+
+        effectResolved = true;
+        break;
+    }
+
+    default:
+    {
+        cout << "Scheme card used: " << card.getName() << endl;
+
+        effectResolved = true;
+        break;
+    }
+    }
+
+    if (!effectResolved)
+    {
+        return false;
+    }
+
+    character->discardCard(handIndex);
+
+    removeDefeatedSidekicks();
+
+    if (actionsRemaining > 0)
+    {
+        actionsRemaining--;
+    }
+
+    return true;
 }
 
 bool Game::attack(Character *attacker)
@@ -2347,7 +2605,7 @@ void Game::useCharacterAbility(Character *character)
 
     if (dracula == nullptr)
     {
-        cout << "This character is not Dracula.\n";
+        cout << character->getName() << " ability is not implemented yet.\n";
         return;
     }
 
