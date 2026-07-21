@@ -19,7 +19,7 @@ private:
     void placeSidekicks(Character *player);
     bool isAdjacent(int from, int to) const;
     bool isTeammate(Character *hero, Character *other);
-    std::vector<string> actionLog;
+   vector<string> actionLog;
 
 public:
     void addLog(const string &message);
@@ -60,6 +60,9 @@ public:
         const Card &card) const;
     vector<Character *> getAttackableTargets(Character *attacker);
     void useCharacterAbility(Character *character);
+    void useDraculaAbility(Dracula* dracula, Character* target);
+   vector<Character *> getDraculaAbilityTargets(
+    Dracula *dracula);
     Board &getBoard();
     Character *getCurrentPlayer() const;
     Character *getOpponent() const;
