@@ -1,0 +1,20 @@
+_deps/ftxui-build/CMakeFiles/dom.dir/src/ftxui/dom/flexbox_config.cpp.obj: \
+ C:\Users\pascalpc.ir\Desktop\project2\UNMACHED\build\_deps\ftxui-src\src\ftxui\dom\flexbox_config.cpp \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/dom/flexbox_config.hpp \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/cstdint \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/c++/pstl/pstl_config.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stdint.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/corecrt.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/vadefs.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/Users/pascalpc.ir/scoop/apps/mingw/15.2.0-rt_v13-rev0/x86_64-w64-mingw32/include/stddef.h \
+ C:/Users/pascalpc.ir/Desktop/project2/UNMACHED/build/_deps/ftxui-src/include/ftxui/util/export.hpp

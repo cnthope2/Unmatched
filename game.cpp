@@ -11,9 +11,7 @@ Game::Game(Character *p1, Character *p2)
     player1 = p1;
     player2 = p2;
     currentPlayer = 1;
-
     actionsRemaining = 2;
-    maneuverMovesRemaining = 0;
 }
 void Game::placeCharacter(Character *character, int spaceId)
 {
@@ -69,11 +67,11 @@ void Game::startGame(bool player1IsYounger)
 
     removeDefeatedSidekicks();
 
-    cout << "\n..... GAME OVER ......\n";
+    addLog("..... GAME OVER ......");
 
     if (!player1->isAlive() && !player2->isAlive())
     {
-        cout << "Both heroes were defeated.\n";
+        addLog("Both heroes were defeated.");
     }
     else if (!player1->isAlive())
     {
@@ -257,9 +255,7 @@ void Game::applyFatigueDamage(Character *fighter)
         if (current != nullptr && current->isAlive())
         {
             current->takeDamage(2);
-
-            cout << current->getName()
-                 << " takes 2 fatigue damage.\n";
+            addLog(current->getName() + " takes 2 fatigue damage.");
         }
     }
 
@@ -275,8 +271,6 @@ void Game::maneuver(Character *character)
     try
     {
         character->drawCard();
-        maneuverMovesRemaining = character->getMovement();
-        cout << character->getName() << " drew a card." << endl;
     }
     catch (const exception &e)
     {
@@ -324,7 +318,6 @@ void Game::maneuver(Character *character)
 bool Game::beginManeuver()
 {
     Character *player = getCurrentPlayer();
-    maneuverMovesRemaining = player->getMovement();
 
     if (player == nullptr || actionsRemaining <= 0)
     {
@@ -360,12 +353,6 @@ bool Game::moveDuringManeuver(Character *fighter, int destination)
         return false;
     }
 
-    if (maneuverMovesRemaining <= 0)
-    {
-        addLog("No movement remaining.\n");
-        return false;
-    }
-
     if (!canMove(fighter, destination))
     {
         return false;
@@ -373,13 +360,10 @@ bool Game::moveDuringManeuver(Character *fighter, int destination)
 
     moveCharacter(fighter, destination);
 
-    maneuverMovesRemaining--;
-
     return true;
 }
 void Game::finishManeuver()
 {
-    maneuverMovesRemaining = 0;
     if (actionsRemaining > 0)
     {
         --actionsRemaining;
@@ -450,7 +434,7 @@ void Game::scheme(Character *character)
 
         if (!livingSidekick)
         {
-            cout << "The sidekick is defeated. " << "This card cannot be played as a Scheme.\n";
+            addLog("The sidekick is defeated. This card cannot be played as a Scheme.\n");
             return;
         }
     }
@@ -474,7 +458,7 @@ void Game::scheme(Character *character)
 
         if (dracula == nullptr)
         {
-            cout << "Only Dracula can use Ravening Seduction.\n";
+            addLog("Only Dracula can use Ravening Seduction.\n");
             break;
         }
 
@@ -524,7 +508,7 @@ void Game::scheme(Character *character)
 
         Character *target = fighters[fighterIndex];
 
-        cout << "Enter destination for " << target->getName() << " (up to 2 spaces, -1 to skip movement): ";
+        addLog("Enter destination for " + target->getName() + " (up to 2 spaces, -1 to skip movement): ");
 
         int destination;
         cin >> destination;
@@ -582,7 +566,7 @@ void Game::scheme(Character *character)
 
         target->takeDamage(adjacentSisters);
 
-        cout << target->getName() << " took " << adjacentSisters << " damage from adjacent Sisters.\n";
+        addLog(target->getName() + " took  damage from adjacent Sisters.\n");
 
         break;
     }
@@ -638,8 +622,7 @@ void Game::scheme(Character *character)
         }
 
         dracula->heal(totalDamageDealt);
-
-        cout << "Dracula healed " << totalDamageDealt << " HP.\n";
+        addLog("Dracula healed ");
 
         break;
     }
@@ -753,7 +736,7 @@ void Game::scheme(Character *character)
             applyFatigueDamage(character);
         }
 
-        cout << "Sherlock healed and drew a card.\n";
+        addLog("Sherlock healed and drew a card.\n");
 
         break;
     }
@@ -806,9 +789,9 @@ void Game::scheme(Character *character)
 
         opponent->takeDamage(1);
 
-        cout << "Sherlock and " << opponent->getName() << " swapped positions.\n";
+        addLog("Sherlock and " + opponent->getName() + " swapped positions.\n");
 
-        cout << opponent->getName() << " took 1 damage.\n";
+        addLog(opponent->getName() + " took 1 damage.\n");
 
         break;
     }
@@ -903,32 +886,7 @@ bool Game::playSchemeFromTUI(Character *character, int handIndex)
         effectResolved = true;
         break;
     }
-    case CardEffect::BaptismOfBlood:
-    {
-        Dracula *dracula = dynamic_cast<Dracula *>(character);
 
-        if (dracula == nullptr)
-        {
-            return false;
-        }
-
-        for (Character *sister : dracula->getSidekicks())
-        {
-            if (sister != nullptr && sister->isAlive())
-            {
-                sister->takeDamage(1);
-
-                dracula->heal(1);
-
-                addLog("Dracula used Baptism of Blood.");
-
-                effectResolved = true;
-                break;
-            }
-        }
-
-        break;
-    }
     case CardEffect::MasterOfDisguise:
     {
         Sherlock *sherlock = dynamic_cast<Sherlock *>(character);
@@ -975,78 +933,9 @@ bool Game::playSchemeFromTUI(Character *character, int handIndex)
         effectResolved = true;
         break;
     }
-    case CardEffect::MistForm:
-    {
-        Dracula *dracula = dynamic_cast<Dracula *>(character);
-
-        if (dracula == nullptr)
-            return false;
-
-        addLog("Dracula used Mist Form.");
-
-        effectResolved = true;
-        break;
-    }
-    case CardEffect::RaveningSeduction:
-    {
-        Dracula *dracula = dynamic_cast<Dracula *>(character);
-
-        if (dracula == nullptr)
-            return false;
-
-        addLog("Dracula used Ravening Seduction.");
-
-        effectResolved = true;
-        break;
-    }
-    case CardEffect::AidDrWatson:
-    {
-        Sherlock *sherlock = dynamic_cast<Sherlock *>(character);
-
-        if (sherlock == nullptr)
-            return false;
-
-        for (Character *sidekick : sherlock->getSidekicks())
-        {
-            if (sidekick != nullptr)
-            {
-                sidekick->heal(3);
-
-                addLog("Watson healed by Aid Dr. Watson.");
-
-                effectResolved = true;
-                break;
-            }
-        }
-
-        break;
-    }
-    case CardEffect::ConfirmSuspicion:
-    {
-        character->drawCard();
-
-        addLog(character->getName() + " used Confirm Suspicion and drew a card.");
-
-        effectResolved = true;
-        break;
-    }
-    case CardEffect::EliminateTheImpossible:
-    {
-        character->drawCard();
-
-        addLog(character->getName() + " used Eliminate The Impossible and drew a card.");
-
-        effectResolved = true;
-        break;
-    }
 
     default:
-    {
-        cout << "Scheme card used: " << card.getName() << endl;
-
-        effectResolved = true;
-        break;
-    }
+        return false;
     }
 
     if (!effectResolved)
@@ -1073,10 +962,7 @@ bool Game::attack(Character *attacker)
         throw invalid_argument("Attacker is null.");
     }
 
-    cout << "\n.......... Attack .........\n";
-    cout << "Attacker: "
-         << attacker->getName()
-         << endl;
+ 
 
     vector<Character *> targets =
         getAttackableTargets(attacker);
@@ -1134,9 +1020,7 @@ bool Game::attack(Character *attacker)
         return false;
     }
 
-    cout << "Target: "
-         << defender->getName()
-         << endl;
+    addLog("Target: " + defender->getName());
 
     int attackIndex;
 
@@ -1214,13 +1098,9 @@ void Game::applyImmediatelyEffect(
     {
     case CardEffect::Feint:
     {
-        effectsCancelled = true;
-
-        cout << player->getName() << " played Feint. Opponent's card effects are cancelled.\n";
-
+  
         break;
     }
-
     case CardEffect::MistForm:
     {
         cout << "Choose destination: ";
@@ -1231,7 +1111,6 @@ void Game::applyImmediatelyEffect(
         if (destination < 1 ||
             destination > board.getNumberOfSpaces())
         {
-            cout << "Invalid space.\n";
             break;
         }
 
@@ -1239,7 +1118,7 @@ void Game::applyImmediatelyEffect(
 
         if (target->isOccupied())
         {
-            cout << "Space is occupied.\n";
+
             break;
         }
 
@@ -1250,8 +1129,6 @@ void Game::applyImmediatelyEffect(
         target->setOccupant(player);
 
         actionsRemaining++;
-
-        cout << "Mist Form activated.\n";
 
         break;
     }
@@ -1307,9 +1184,7 @@ void Game::applyDuringCombatEffects(
         {
             attackValue = attackCard.getBoost();
 
-            cout << "Opponent attack value changed to "
-                 << attackValue
-                 << ".\n";
+            addLog("Opponent attack value changed to " + attackValue);
         }
     }
 }
@@ -1329,7 +1204,7 @@ void Game::applyAfterCombatEffect(
             {
                 player->drawCard();
 
-                cout << player->getName() << " drew 1 card.\n";
+               addLog( player->getName() +" drew 1 card.\n");
             }
             catch (const exception &e)
             {
@@ -1352,7 +1227,7 @@ void Game::applyAfterCombatEffect(
         {
             if (!playerWon)
             {
-                cout << "Thirst for Sustenance did not activate because Dracula lost the combat.\n";
+               addLog( "Thirst for Sustenance did not activate because Dracula lost the combat.\n");
                 break;
             }
 
@@ -1433,7 +1308,7 @@ void Game::applyAfterCombatEffect(
         }
         case CardEffect::TheGameIsAfoot:
         {
-            cout << "The Game Is Afoot activated.\n";
+             addLog( "The Game Is Afoot activated.\n");
 
             int destination;
 
@@ -1477,7 +1352,7 @@ void Game::applyAfterCombatEffect(
             try
             {
                 opponent->drawCard();
-                cout << opponent->getName() << " drew 1 card.\n";
+                  addLog( opponent->getName()+" drew 1 card.\n");
             }
             catch (const exception &e)
             {
@@ -1544,11 +1419,11 @@ void Game::applyAfterCombatEffect(
                 sherlock->heal(1);
                 watson->heal(1);
 
-                cout << "Sherlock and Dr. Watson healed 1 HP.\n";
+                   addLog("Sherlock and Dr. Watson healed 1 HP.\n");
             }
             else
             {
-                cout << "Dr. Watson is not adjacent to Sherlock.\n";
+                   addLog( "Dr. Watson is not adjacent to Sherlock.\n");
             }
 
             break;
@@ -1607,6 +1482,56 @@ vector<Character *> Game::getAttackableTargets(
         }
 
         if (canAttack)
+        {
+            targets.push_back(target);
+        }
+    }
+
+    return targets;
+}
+vector<Character *> Game::getDraculaAbilityTargets(
+    Dracula *dracula)
+{
+    std::vector<Character *> targets;
+
+    if (dracula == nullptr ||
+        !dracula->isAlive() ||
+        dracula->getPosition() == 0)
+    {
+        return targets;
+    }
+
+    std::vector<Character *> allFighters;
+
+    std::vector<Character *> player1Fighters =
+        getFighters(player1);
+
+    std::vector<Character *> player2Fighters =
+        getFighters(player2);
+
+    allFighters.insert(
+        allFighters.end(),
+        player1Fighters.begin(),
+        player1Fighters.end());
+
+    allFighters.insert(
+        allFighters.end(),
+        player2Fighters.begin(),
+        player2Fighters.end());
+
+    for (Character *target : allFighters)
+    {
+        if (target == nullptr ||
+            target == dracula ||
+            !target->isAlive() ||
+            target->getPosition() == 0)
+        {
+            continue;
+        }
+
+        if (isAdjacent(
+                dracula->getPosition(),
+                target->getPosition()))
         {
             targets.push_back(target);
         }
@@ -1933,6 +1858,7 @@ void Game::nextTurn()
     {
         currentPlayer = 1;
     }
+    draculaAbilityUsed = false;
 
     actionsRemaining = 2;
 
@@ -1990,8 +1916,8 @@ void Game::removeDefeatedSidekicks()
             if (!sidekick->isAlive() &&
                 sidekick->getPosition() != 0)
             {
-                cout << sidekick->getName()
-                     << " was defeated and removed from the board.\n";
+                  addLog( sidekick->getName()
+                     + " was defeated and removed from the board.\n");
 
                 removeFighterFromBoard(sidekick);
             }
@@ -2272,29 +2198,43 @@ void Game::resolveCombat(
         addLog(defender->getName() + " did not defend.");
     }
 
+
+
     if (attackCard.getEffect() == CardEffect::Feint &&
         defenseCard != nullptr)
     {
-        Sherlock *defendingSherlock =
-            dynamic_cast<Sherlock *>(defender);
+        bool protectedBySherlock =
+            defender->getName() == "Sherlock Holmes" ||
+            defender->getName() == "Dr. Watson";
 
-        if (defendingSherlock == nullptr ||
-            defendingSherlock->canBeDisabledByEffect(*defenseCard))
+        if (!protectedBySherlock)
         {
             defenseEffectCancelled = true;
+        }
+        else
+        {
+            addLog(
+                "Sherlock's ability prevented Feint from cancelling " +
+                defenseCard->getName() + ".");
         }
     }
 
     if (defenseCard != nullptr &&
         defenseCard->getEffect() == CardEffect::Feint)
     {
-        Sherlock *attackingSherlock =
-            dynamic_cast<Sherlock *>(attacker);
+        bool protectedBySherlock =
+            attacker->getName() == "Sherlock Holmes" ||
+            attacker->getName() == "Dr. Watson";
 
-        if (attackingSherlock == nullptr ||
-            attackingSherlock->canBeDisabledByEffect(attackCard))
+        if (!protectedBySherlock)
         {
             attackEffectCancelled = true;
+        }
+        else
+        {
+            addLog(
+                "Sherlock's ability prevented Feint from cancelling " +
+                attackCard.getName() + ".");
         }
     }
 
@@ -2391,7 +2331,7 @@ void Game::modifyDefenseValue(
     {
         defenseValue += attackCard.getBoost();
 
-        cout << "Look Into My Eyes: +" << attackCard.getBoost() << " defense.\n";
+          addLog( "Look Into My Eyes: +" + attackCard.getBoost());
 
         break;
     }
@@ -2605,7 +2545,7 @@ void Game::useCharacterAbility(Character *character)
 
     if (dracula == nullptr)
     {
-        cout << character->getName() << " ability is not implemented yet.\n";
+
         return;
     }
 
@@ -2651,15 +2591,8 @@ void Game::useCharacterAbility(Character *character)
 
     if (validTargets.empty())
     {
-        cout << "No adjacent fighter available.\n";
+
         return;
-    }
-
-    cout << "Choose a fighter to damage:\n";
-
-    for (int i = 0; i < static_cast<int>(validTargets.size()); i++)
-    {
-        cout << i << ". " << validTargets[i]->getName() << " HP: " << validTargets[i]->getHealth() << endl;
     }
 
     int targetIndex;
@@ -2668,7 +2601,7 @@ void Game::useCharacterAbility(Character *character)
     if (targetIndex < 0 ||
         targetIndex >= static_cast<int>(validTargets.size()))
     {
-        cout << "Invalid target.\n";
+
         return;
     }
 
@@ -2680,14 +2613,33 @@ void Game::useCharacterAbility(Character *character)
     try
     {
         dracula->drawCard();
-
-        cout << "Dracula drew 1 card.\n";
     }
     catch (const exception &e)
     {
-        cout << "Could not draw card: " << e.what() << endl;
+
         applyFatigueDamage(dracula);
     }
+}
+void Game::useDraculaAbility(Dracula *dracula, Character *target)
+{
+    if (dracula == nullptr ||
+        target == nullptr)
+    {
+        return;
+    }
+
+    target->takeDamage(1);
+
+    try
+    {
+        dracula->drawCard();
+    }
+    catch (const exception &e)
+    {
+        applyFatigueDamage(dracula);
+    }
+
+    addLog("Dracula used Feed.");
 }
 vector<Character *> Game::getFighters(Character *hero)
 {

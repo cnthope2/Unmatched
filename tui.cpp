@@ -779,7 +779,6 @@ void TUI::runGameDashboard()
             &defenseCards,
             &selectedDefenseCard,
             defenseCardOption);
-
     auto refreshTargetMenu = [&]()
     {
         targets.clear();
@@ -788,24 +787,43 @@ void TUI::runGameDashboard()
 
         if (attacker == nullptr)
         {
+            targets.push_back("Cancel");
             return;
         }
 
-        std::vector<Character *> list =
-            game.getAttackableTargets(attacker);
+        std::vector<Character *> list;
+
+        if (abilityMode)
+        {
+            Dracula *dracula =
+                dynamic_cast<Dracula *>(attacker);
+
+            if (dracula != nullptr)
+            {
+                list =
+                    game.getDraculaAbilityTargets(dracula);
+            }
+        }
+        else
+        {
+            list =
+                game.getAttackableTargets(attacker);
+        }
 
         for (Character *target : list)
         {
             targets.push_back(
                 target->getName() +
                 " - Space " +
-                std::to_string(target->getPosition()));
+                std::to_string(
+                    target->getPosition()));
 
             targetPointers.push_back(target);
         }
 
         targets.push_back("Cancel");
     };
+
     auto refreshAttackCardMenu = [&]()
     {
         attackCards.clear();
@@ -929,9 +947,25 @@ void TUI::runGameDashboard()
             return;
         }
 
-        game.useCharacterAbility(current);
+        Dracula *dracula = dynamic_cast<Dracula *>(current);
 
-        activeMenu = 0;
+        if (dracula == nullptr)
+        {
+            activeMenu = 0;
+            return;
+        }
+        if (game.getActionsRemaining() != 2)
+        {
+            activeMenu = 0;
+            return;
+        }
+
+        abilityMode = true;
+        attacker = dracula;
+
+        refreshTargetMenu();
+
+        activeMenu = 3;
     };
 
     Component abilityMenu = Menu(&abilityItems, &selectedAbility, abilityOption);

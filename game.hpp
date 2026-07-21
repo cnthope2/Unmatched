@@ -16,10 +16,11 @@ private:
     int actionsRemaining;
     int maneuverMovesRemaining;
     bool effectsCancelled = false;
+    bool draculaAbilityUsed = false;
     void placeSidekicks(Character *player);
     bool isAdjacent(int from, int to) const;
     bool isTeammate(Character *hero, Character *other);
-   vector<string> actionLog;
+    vector<string> actionLog;
 
 public:
     void addLog(const string &message);
@@ -60,9 +61,9 @@ public:
         const Card &card) const;
     vector<Character *> getAttackableTargets(Character *attacker);
     void useCharacterAbility(Character *character);
-    void useDraculaAbility(Dracula* dracula, Character* target);
-   vector<Character *> getDraculaAbilityTargets(
-    Dracula *dracula);
+    vector<Character *> getDraculaAbilityTargets(Dracula *dracula);
+    void useDraculaAbility(Dracula *dracula, Character *target);
+
     Board &getBoard();
     Character *getCurrentPlayer() const;
     Character *getOpponent() const;
